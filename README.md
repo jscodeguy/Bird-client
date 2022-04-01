@@ -15,6 +15,7 @@
 - User should be able to search for a bird 
     - User will use bird name or location to find birds
 - User will be able to leave comments on bird sighting logs
+- User will be able to add their own images to bird log
 
 ---
 
