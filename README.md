@@ -20,13 +20,13 @@
 
 
 ## Erd
-<img src="imgs/Bird-erd.png" width="200" height="100" alt="Erd image">
+<img src="imgs/Bird-erd.png" width="600" height="400" alt="Erd image">
 
 ---
 
 ## Wire frame
 
-<img  src="imgs/Bird-Wire.png" width="400" height="300" alt="Wire frame">
+<img  src="imgs/Bird-Wire.png" width="200" height="100" alt="Wire frame">
 
 <a href="https://docs.google.com/presentation/d/1DE21STpf4aIwmSLS2AGdY9T9MXmBdI52lxDonLpo5iY/edit?usp=sharing"> link to wire frames</a>
 
