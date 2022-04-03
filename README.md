@@ -21,7 +21,7 @@
 
 
 ## Erd
-<img src="imgs/Bird-erd.png" width="600" height="400" alt="Erd image">
+<img src="imgs/new-erd.png" width="600" height="400" alt="Erd image">
 
 ---
 
