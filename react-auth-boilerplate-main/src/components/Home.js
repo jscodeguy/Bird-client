@@ -9,6 +9,8 @@ const Home = (props) => {
 			<h2>Home Page</h2>
 			<IndexSightings />
 			<ShowSightings />
+			<ShowFaves />
+	
 		</>
 	)
 }

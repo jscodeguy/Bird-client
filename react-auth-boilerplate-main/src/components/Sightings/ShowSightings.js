@@ -12,7 +12,7 @@ const ShowSightings = (props) => {
     // empty dependency array in useEffect to act like component did mount
     useEffect(() => {
         getOneSighting(id)
-            .then(res => setSighting(res.data.sighting))
+            .then(res => setSightings(res.data.sightings))
             .catch(console.error)
     }, [id])
 
@@ -20,7 +20,7 @@ const ShowSightings = (props) => {
 
     return (
         <>
-        <h5> Sighting</h5>
+        <h5> show sightings</h5>
     </>
 )
 }

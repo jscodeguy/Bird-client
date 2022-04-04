@@ -8,6 +8,7 @@ const IndexSightings = (props) => {
     useEffect(() => {
         getAllSightings()
             .then(res => {
+                console.log(res.data.sightings)
                 setSightings(res.data.sightings)
             })
             .catch(console.error)
@@ -17,7 +18,8 @@ const IndexSightings = (props) => {
 
     return ( 
         <>
-            <h5> ALL MY SIGHTINGS</h5>
+            <h5> index sightings</h5>
+
         </>
     )
 
