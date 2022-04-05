@@ -1,12 +1,8 @@
-import apiUrl from '../apiConfig'
-import axios from 'axios'
+// Import dependencies
+import apiUrl from "../apiConfig"
+import axios from "axios"
 
-// index function
-export const getAllSightings = () => {
+// Fetch call to pull all sightings from the API
+export const getAllSights = () => {
     return axios(`${apiUrl}/sightings`)
-}
-
-// show function
-export const getOneSighting = (sightingId) => {
-    return axios(`${apiUrl}/sightings/${sightingId}`)
 }

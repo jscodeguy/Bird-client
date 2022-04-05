@@ -12,6 +12,7 @@ import SignUp from './components/auth/SignUp'
 import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
+import IndexSightings from './components/Sightings/IndexSightings'
 
 const App = () => {
 
@@ -67,6 +68,7 @@ const clearUser = () => {
 								<ChangePassword msgAlert={msgAlert} user={user} />
 							</RequireAuth>}
 					/>
+					<Route path='/sightings' element={<IndexSightings msgAlert={msgAlert} user={user} />} />
 				</Routes>
 
 				{msgAlerts.map((msgAlert) => (
