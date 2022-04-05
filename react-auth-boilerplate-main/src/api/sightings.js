@@ -37,4 +37,14 @@ export const createSight = (user, newSighting) => {
 
 // DELETE
 // API call to destroy a sighting from the database.
-
+export const removeSight = (user, sightId) => {
+    console.log("user in delete:", user)
+    console.log("id in delete:", sightId)
+    return axios({
+        url: `${apiUrl}/sightings/${sightId}`,
+        method: "DELETE",
+        headers: {
+            Authorization: `Token token=${user.token}`
+        }
+    })
+}
