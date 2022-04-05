@@ -1,9 +1,11 @@
 // Import dependencies
 import React, { useState, useEffect } from "react"
 import { getAllSights } from "../../api/sightings"
+import { Link } from "react-router-dom"
 
 
 const IndexSightings = () => {
+    //  Destructuring the useState React hook
     const [sightings, setSightings] = useState(null)
 
     useEffect(() => {
@@ -24,7 +26,7 @@ const IndexSightings = () => {
     if (sightings.length > 0) {
         sightings.Jsx = sightings.map(sightings => (
             <li key={sightings.id}>
-                {sightings.weather}
+                <Link to={`./${sightings._id}`}>{sightings.where_seen}</Link>
             </li>
         ))
     }
