@@ -13,19 +13,21 @@ import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
 import IndexSightings from './components/Sightings/IndexSightings'
-import ShowSightings from "./components/Sightings/ShowSightings"
+import ShowSighting from "./components/Sightings/ShowSighting"
+import CreateSighting from "./components/Sightings/CreateSighting"
 
 const App = () => {
 
-const [user, setUser] = useState(null)
-const [msgAlerts, setMsgAlerts] = useState([])
+	const [user, setUser] = useState(null)
+	const [msgAlerts, setMsgAlerts] = useState([])
 
-console.log('user in app', user)
-console.log('message alerts', msgAlerts)
-const clearUser = () => {
-    console.log('clear user ran')
-    setUser(null)
-}
+	console.log('user in app', user)
+	console.log('message alerts', msgAlerts)
+
+	const clearUser = () => {
+		console.log('clear user ran')
+		setUser(null)
+	}
 
 	const deleteAlert = (id) => {
 		setMsgAlerts((prevState) => {
@@ -69,8 +71,18 @@ const clearUser = () => {
 								<ChangePassword msgAlert={msgAlert} user={user} />
 							</RequireAuth>}
 					/>
+
+					<Route
+						path="/sightings/new"
+						element={
+							<RequireAuth user={user}>
+								<CreateSighting msgAlert={msgAlert} user={user} />
+							</RequireAuth>
+						}
+					/>
 					<Route path='/sightings' element={<IndexSightings msgAlert={msgAlert} user={user} />} />
-					<Route path='/sightings/:id' element={<ShowSightings msgAlert={msgAlert} user={user} />} />
+					<Route path='/sightings/:id' element={<ShowSighting msgAlert={msgAlert} user={user} />} />
+
 				</Routes>
 
 				{msgAlerts.map((msgAlert) => (

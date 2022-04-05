@@ -18,6 +18,19 @@ export const getOneSight = (sightId) => {
 
 // POST
 // API call to create a new sighting
+// The arguemnts are passing the things we need to make the POST happen (user info and newSighting object with the entered details).
+export const createSight = (user, newSighting) => {
+    console.log("user:", user)
+    console.log("newSighting:", newSighting)
+    return axios({
+        url: `${apiUrl}/sightings`,
+        method: "POST",
+        headers: {
+            Authorization: `Token token=${user.token}`
+        },
+        data: {sighting: newSighting }
+    })
+}
 
 // PATCH
 // API call to update an existing sighting
