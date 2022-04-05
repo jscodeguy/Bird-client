@@ -4,6 +4,8 @@ import ShowFaves from "./Faves/ShowFaves"
 import IndexFaves from "./Faves/IndexFaves"
 import IndexPhotos from "./Photos/IndexPhotos"
 import ShowPhotos from "./Photos/ShowPhoto"
+import CreateFave from "./Faves/CreateFaves"
+
 
 const Home = (props) => {
 	// const { msgAlert, user } = props
@@ -12,13 +14,14 @@ const Home = (props) => {
 	return (
 		<>
 			<h2>Home Page</h2>
-
+			<CreateFave/>
 			<IndexSightings />
 			<ShowSightings />
 			<ShowFaves />
 			<IndexFaves />
 			<IndexPhotos />
 			<ShowPhotos />
+			
 		</>
 	)
 }

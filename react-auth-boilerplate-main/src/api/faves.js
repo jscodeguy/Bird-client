@@ -8,5 +8,19 @@ export const getAllFaves = () => {
 
 // show function
 export const getOneFave = (faveId) => {
-    return axios(`${apiUrl}/faves/${faveId}`)
+    return axios(`${apiUrl}/favorites/${faveId}`)
+}
+
+// create function
+export const createFavorite = (user, newFave) => {
+    console.log('user', user)
+    console.log('this is newFave', newFave)
+    return axios({
+        url: `${apiUrl}/favorites`,
+        method: 'POST',
+        headers: {
+            Authorization: `Token token=${user.token}`
+        },
+        data: { favorite: newFave }
+    })
 }

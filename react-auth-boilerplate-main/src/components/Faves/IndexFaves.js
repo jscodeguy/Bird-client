@@ -19,7 +19,7 @@ const IndexFaves = (props) => {
     return ( 
         <>
             <h5> index faves</h5>
-            <small>Type: {pet.type}</small><br/>
+            
 
         </>
     )
