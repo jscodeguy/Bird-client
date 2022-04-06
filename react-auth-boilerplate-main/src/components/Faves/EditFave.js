@@ -63,12 +63,12 @@ const EditFave = (props) => {
         <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton></Modal.Header>
             <Modal.Body>
-                <favoriteForm 
+                {/* <FavoriteForm 
                     favorite={favorite}
                     handleChange={handleChange}
                     handleSubmit={handleSubmit}
                     heading="Edit favorite!"
-                />
+                /> */}
             </Modal.Body>
         </Modal>
     )
