@@ -36,6 +36,7 @@ const IndexFaves = (props) => {
             <ul>
                 <li>{favorites.Jsx}</li>
             </ul>
+
         </>
     )
 
