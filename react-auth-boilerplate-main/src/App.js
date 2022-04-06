@@ -12,9 +12,14 @@ import SignUp from './components/auth/SignUp'
 import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
+<<<<<<< HEAD
 import IndexSightings from './components/Sightings/IndexSightings'
 import ShowSighting from "./components/Sightings/ShowSighting"
 import CreateSighting from "./components/Sightings/CreateSighting"
+=======
+import IndexFaves from './components/Faves/IndexFaves'
+import ShowFaves from './components/Faves/ShowFaves'
+>>>>>>> 515403c92281705550a2cb55f6f27cee8433d6dc
 
 const App = () => {
 
@@ -60,6 +65,7 @@ const App = () => {
 						path='/sign-in'
 						element={<SignIn msgAlert={msgAlert} setUser={setUser} />}
 					/>
+<<<<<<< HEAD
 					<Route
 						path='/sign-out'
 						element={
@@ -92,6 +98,25 @@ const App = () => {
 						path="/sightings/:id"
 						element={<ShowSighting msgAlert={msgAlert} user={user} />}
 					/>
+=======
+          <Route
+            path='/sign-out'
+            element={
+              <RequireAuth user={user}>
+                <SignOut msgAlert={msgAlert} clearUser={clearUser} user={user} />
+              </RequireAuth>
+            }
+          />
+          <Route
+            path='/change-password'
+            element={
+              <RequireAuth user={user}>
+                <ChangePassword msgAlert={msgAlert} user={user} />
+              </RequireAuth>}
+          />
+		  <Route path='/favorites' element={<IndexFaves msgAlert={msgAlert} user={user} />} />
+		  <Route path='/favorites/:id' element={<ShowFaves msgAlert={msgAlert} user={user} />} />
+>>>>>>> 515403c92281705550a2cb55f6f27cee8433d6dc
 				</Routes>
 
 				{msgAlerts.map((msgAlert) => (
