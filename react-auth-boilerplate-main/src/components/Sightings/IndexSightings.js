@@ -25,7 +25,7 @@ const IndexSightings = () => {
 
     if (sightings.length > 0) {
         sightings.Jsx = sightings.map(sightings => (
-            <li key={sightings.id}>
+            <li key={sightings._id}>
                 <Link to={`./${sightings._id}`}>{sightings.where_seen}</Link>
             </li>
         ))
