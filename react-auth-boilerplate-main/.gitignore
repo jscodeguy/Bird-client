@@ -21,4 +21,10 @@
 
 npm-debug.log*
 yarn-debug.log*
-yarn-error.log*
+yarn-error.log*debug
+
+# development
+EditSighting-ORIG.js
+EditSightingModal-ORIG.js
+ShowSighting-ORIG.js
+SightingForm-ORIG.js
