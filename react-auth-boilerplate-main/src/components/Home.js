@@ -7,7 +7,7 @@ import ShowPhotos from "./Photos/ShowPhoto"
 
 const Home = (props) => {
 	// const { msgAlert, user } = props
-	console.log('props in home', props)
+	// console.log('props in home', props)
 
 	return (
 		<>
