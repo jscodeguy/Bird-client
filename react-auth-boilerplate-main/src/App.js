@@ -14,6 +14,8 @@ import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
 import CreateFave from './components/Faves/CreateFaves'
 
+import IndexFaves from './components/Faves/IndexFaves'
+import ShowFaves from './components/Faves/ShowFaves'
 
 const App = () => {
 
@@ -78,6 +80,8 @@ const App = () => {
 						</RequireAuth>
 					}
 				/>
+		  <Route path='/favorites' element={<IndexFaves msgAlert={msgAlert} user={user} />} />
+		  <Route path='/favorites/:id' element={<ShowFaves msgAlert={msgAlert} user={user} />} />
 				</Routes>
 				{msgAlerts.map((msgAlert) => (
 					<AutoDismissAlert
