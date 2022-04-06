@@ -1,11 +1,11 @@
-import React, { useState } from "react"
+import React from "react"
 import { Form, Container, Button } from "react-bootstrap"
 
 
 const SightingForm = (props) => {    
     const {sighting, handleChange, handleSubmit, heading} = props
-    console.log("props to sighting form:", props)
-    console.log("sighting in sightingform:", sighting)
+    // console.log("props to sighting form:", props)
+    // console.log("sighting in sightingform:", sighting)
 
     return (
         <Container className="justify-content-center">
@@ -28,15 +28,17 @@ const SightingForm = (props) => {
                     name="when_seen"
                     onChange={handleChange}
                 />
-                <Form.Label>Weather (to be dropdown)</Form.Label>
-                <Form.Control 
-                    placeholder="What was the weather like?"
-                    value={sighting.weather}
-                    // To be dropdown of choices
-                    type="string"
+                <Form.Select
+                    aria-label="Weather"
                     name="weather"
-                    onChange={handleChange}
-                />
+                    defaultValue={sighting.weather}
+                    onChange={handleChange}>
+                        <option>What was the weather?</option>
+                        <option value="sun">Sun</option>
+                        <option value="overcast">Overcast</option>
+                        <option value="rain">Rain</option>
+                        <option value="snow">Snow</option>
+                    </Form.Select>                
                 <Form.Label>Description</Form.Label>
                 <Form.Control 
                     placeholder="Describe your bird experience"
