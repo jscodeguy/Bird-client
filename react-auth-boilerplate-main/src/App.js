@@ -48,7 +48,10 @@ const App = () => {
 			<Fragment>
 				<Header user={user} />
 				<Routes>
-					<Route path='/' element={<Home msgAlert={msgAlert} user={user} />} />
+					<Route
+						path='/'
+						element={<Home msgAlert={msgAlert} user={user} />}
+					/>
 					<Route
 						path='/sign-up'
 						element={<SignUp msgAlert={msgAlert} setUser={setUser} />}
@@ -71,18 +74,24 @@ const App = () => {
 								<ChangePassword msgAlert={msgAlert} user={user} />
 							</RequireAuth>}
 					/>
-
+					{/* Sightings: CREATE route */}
 					<Route
 						path="/sightings/new"
 						element={
 							<RequireAuth user={user}>
 								<CreateSighting msgAlert={msgAlert} user={user} />
-							</RequireAuth>
-						}
+							</RequireAuth>}
 					/>
-					<Route path='/sightings' element={<IndexSightings msgAlert={msgAlert} user={user} />} />
-					<Route path='/sightings/:id' element={<ShowSighting msgAlert={msgAlert} user={user} />} />
-
+					{/* Sightings: INDEX route */}
+					<Route
+						path="/sightings"
+						element={<IndexSightings msgAlert={msgAlert} user={user} />}
+					/>
+					{/* Sightings: SHOW route */}
+					<Route
+						path="/sightings/:id"
+						element={<ShowSighting msgAlert={msgAlert} user={user} />}
+					/>
 				</Routes>
 
 				{msgAlerts.map((msgAlert) => (

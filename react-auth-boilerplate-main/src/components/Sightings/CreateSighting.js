@@ -1,13 +1,17 @@
+// Import dependencies
 import React, { useState } from "react"
-import { Form, Container, Button } from "react-bootstrap"
 import { createSight } from "../../api/sightings"
+import { useNavigate } from "react-router-dom"
+import SightingForm from "../shared/SightingForm"
+import { createSightingSuccess, createSightingFailure } from "../shared/AutoDismissAlert/messages"
 
 // CreateSighting.js renders a form and calls the createSighting function from sighting.js, which contains all the sighting-based API calls.
 
 // We'll need the user prop here as we've required an authorized login to make a new document in the database.
 const CreateSighting = (props) => {
-    const {user} = props
+    const { user, msgAlert } = props
     console.log("user prop in CreateSighting:", user)
+    const navigate = useNavigate()
     const [sighting, setSighting] = useState({
         where_seen: "",
         when_seen: "",
@@ -29,7 +33,9 @@ const CreateSighting = (props) => {
             let value = e.target.value
             console.log("event target type:", e.target.type)
             
-            const updatedValue = { [name]: value}
+            // ******* Will need to write a validator for date, so user can't set a date that hasn't happened yet.
+
+            const updatedValue = { [name]: value }
 
             console.log("the sighting was:", prevSighting)
             console.log("the sighting will become:", updatedValue)
@@ -42,58 +48,37 @@ const CreateSighting = (props) => {
     const handleSubmit = (e) => {
         // e === event
 
-        // Revents any event from performing its default action, so nothing happens until we want it to.
+        // Prevents any event from performing its default action, so nothing happens until we want it to.
         e.preventDefault()
 
         createSight(user, sighting)
-            .then(res => {console.log(res.data.sighting)})
-            .catch(err => console.log(err))
+            // If create is sucessful, navigate to the SHOW page.
+            .then(res => {navigate(`/sightings/${res.data.sighting._id}`)})
+            // Then send a success message...
+            .then(() =>
+                msgAlert({
+                    heading: "Got it!",
+                    message: createSightingSuccess,
+                    variant: "success",
+                }))
+            // ...or a failure message.
+            .catch(() =>
+                msgAlert({
+                    heading: "Uh oh!",
+                    message: createSightingFailure,
+                    variant: "danger",
+                }))
             console.log("the sighting:", sighting)
     }
 
     return (
-        <Container className="justify-content-center">
-            <Form onSubmit={handleSubmit}>
-                
-                <Form.Label>Where Seen</Form.Label>
-                <Form.Control
-                    placeholder="Where did you see the bird?"
-                    value={sighting.where_seen}
-                    name="where_seen"
-                    onChange={handleChange}
-                />
-                <Form.Label>Date Seen</Form.Label>
-                <Form.Control
-                    placeholder="What date did you see the bird?"
-                    value={sighting.when_seen}
-                    name="when_seen"
-                    onChange={handleChange}
-                />
-                <Form.Label>Weather (future dropdown)</Form.Label>
-                {/* Come back and make this a dropdown list of choices */}
-                <Form.Control
-                    placeholder="What was the weather like? (to become dropdown)"
-                    value={sighting.weather}
-                    name="weather"
-                    onChange={handleChange}
-                />
-                <Form.Label>Description</Form.Label>
-                <Form.Control
-                    placeholder="Talk about your bird sighting experience!"
-                    value={sighting.description}
-                    name="description"
-                    onChange={handleChange}
-                />
-                <Form.Label>Bird ID (will be from API)</Form.Label>
-                <Form.Control
-                    placeholder="1234_bird_id_from_api"
-                    value={sighting.bird}
-                    name="bird"
-                    onChange={handleChange}
-                />
-                <Button type="submit">Submit</Button>
-            </Form>
-        </Container>
+        // Moved form elements to separate component (SightingForm) so we can reuse the code.
+        <SightingForm
+            sighting={sighting}
+            handleChange={handleChange}
+            handleSubmit={handleSubmit}
+            heading="Add a new sighting"
+        />
     )
 }
 

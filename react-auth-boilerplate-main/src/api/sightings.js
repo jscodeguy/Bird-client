@@ -34,6 +34,18 @@ export const createSight = (user, newSighting) => {
 
 // PATCH
 // API call to update an existing sighting
+export const updateSight = (user, updatedSighting) => {
+    console.log("user in updatedSighting:", user)
+    console.log("Updated sighting:", updatedSighting)
+    return axios({
+        url: `${apiUrl}/sightings/${updatedSighting.id}`,
+        method: "PATCH",
+        headers: {
+            Authorization: `Token token=${user.token}`
+        },
+        data: { sighting: updatedSighting }
+    })
+}
 
 // DELETE
 // API call to destroy a sighting from the database.
