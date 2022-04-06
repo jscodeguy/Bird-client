@@ -1,7 +1,34 @@
 import React from 'react'
+import { Form, Container, Button } from 'react-bootstrap'
+
 
 const FavoriteForm = ({favorite, handleSubmit, handleChange}) => (
-<div>
+
+<Container className="justify-content-center">
+            <Form onSubmit={handleSubmit}>
+                <Form.Label>Have you seen it?</Form.Label>
+                <Form.Check 
+                    label='Have you seen it?'
+                    name='haveSeen'
+                    defaultChecked={favorite.haveSeen}
+                    onChange={handleChange}
+                />
+                <Form.Label>What bird was it?</Form.Label>
+                <Form.Control 
+                    placeholder="What bird was it?"
+                    value={favorite.bird}
+                    name='bird'
+                    onChange={handleChange}
+                />
+                <Button type='submit'>Submit</Button>
+            </Form>
+        </Container>
+
+
+
+
+
+/* <div>
     <form onSubmit={handleSubmit}>
         <label>Have you seen it?</label>
             <checkbox 
@@ -21,6 +48,6 @@ const FavoriteForm = ({favorite, handleSubmit, handleChange}) => (
                         
         <button type="submit" >Submit</button>
     </form>
-</div>
+</div> */
 )
 export default FavoriteForm

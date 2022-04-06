@@ -14,7 +14,7 @@ const Home = (props) => {
 	return (
 		<>
 			<h2>Home Page</h2>
-			<CreateFave/>
+			<CreateFave user={props.user}/>
 			<IndexSightings />
 			<ShowSightings />
 			<ShowFaves />

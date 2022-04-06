@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { createFavorite } from '../../api/faves'
 
 const CreateFave = (props) => {
+    console.log('this is my props', props)
     //destructuring user so we don't need to call this.props
     const { user } = props
     //console.log to make sure that our user is being used
@@ -11,7 +12,7 @@ const CreateFave = (props) => {
     //navigate will be used later for redirect to show page
     const navigate = useNavigate()
     //this sets the state and an empty favorite object
-    const [favorite, setFave] = useState({haveSeen: false, notes: '', pics: '', bird: ''})
+    const [favorite, setFave] = useState({haveSeen: false, notes: null, pics: null, bird: ''})
     console.log('fave in create', favorite)
     //this function will handle the live updating of the input fields as they are changed
     const handleChange = (e) => {
@@ -44,12 +45,12 @@ const CreateFave = (props) => {
     //this function will handle the event where the form is submitted
     const handleSubmit = (e) => {
         // e === event
-        //prevent default prevents the defualt function of a submit button (refreshing the browser ) from happening
+        //prevent default prevents the default function of a submit button (refreshing the browser ) from happening
         e.preventDefault()
 
         createFavorite(user, favorite)
             // if create is successful, we should navigate to the show page
-            .then(res => {navigate(`/favorites/${res.data.favorite.id}`)})
+            .then(res => {navigate(`/favorites/${res.data.favorite._id}`)})
             // then we send a success message
             .then(() =>
             console.log('pet creation successful')
