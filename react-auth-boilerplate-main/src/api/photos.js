@@ -1,12 +1,25 @@
 import apiUrl from '../apiConfig'
 import axios from 'axios'
 
-// index function
-export const getAllPhotos = () => {
-    return axios(`${apiUrl}/photos`)
+// index route for photo imported from the bird-api
+export const getAllPictures = () => {
+    return axios(`${apiUrl}/Pictures`)
 }
 
-// show function
-export const getOnePhoto = (photoId) => {
-    return axios(`${apiUrl}/photos/${photoId}`)
+// show route for photo imported from the bird-api
+export const getOnePicture = (pictureId) => {
+    return axios(`${apiUrl}/pictures/${pictureId}`)
+}
+
+
+// POST -> create function
+export const createPicture = (user, newPicture) => {
+    return axios({
+        url: `${apiUrl}/pictures`,
+        method: 'POST',
+        headers: {
+            Authorization: `Token token=${user.token}`
+        },
+        data: newPicture
+    })
 }
