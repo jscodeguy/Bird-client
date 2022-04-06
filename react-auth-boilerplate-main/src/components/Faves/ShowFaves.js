@@ -20,7 +20,7 @@ const ShowFaves = (props) => {
     }, [id])
 
     const destroyFav = () => {
-        removeFav(user, favorites.id)
+        removeFav(user, favorites._id)
             .then(() =>
                 msgAlert({
                     heading: 'Fav updated!',
@@ -40,7 +40,7 @@ const ShowFaves = (props) => {
     return (
         <>
             <h5> Show Favorites</h5>
-            <p>{favorites.id}</p>
+            <p>{favorites._id}</p>
             <p>{favorites.haveSeen}</p>
             <p>{favorites.bird}</p>
             <Button onClick={() => destroyFav()}variant="danger">
