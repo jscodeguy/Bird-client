@@ -11,7 +11,7 @@ const IndexSightings = () => {
     useEffect(() => {
         getAllSights()
             .then(res => {
-                console.log("response data sightings:", res.data.sightings)
+                // console.log("response data sightings:", res.data.sightings)
                 setSightings(res.data.sightings)
             })
             .catch(console.error)

@@ -14,15 +14,15 @@ const EditSightingModal = (props) => {
         setSighting(prevSighting => {
             const name = e.target.name
             let value = e.target.value
-            console.log('etarget type', e.target.type)
-            console.log('this is e.target checked', e.target.checked)
+            // console.log('etarget type', e.target.type)
+            // console.log('this is e.target checked', e.target.checked)
 
             // Conditionals and data validation go here.
 
             const updatedValue = { [name]: value }
 
-            console.log('prevSighting', prevSighting)
-            console.log('updatedValue', updatedValue)
+            // console.log('prevSighting', prevSighting)
+            // console.log('updatedValue', updatedValue)
 
             return {...prevSighting, ...updatedValue}
         })
@@ -32,7 +32,7 @@ const EditSightingModal = (props) => {
         // e === event
         e.preventDefault()
 
-        console.log('the sighting to submit', sighting)
+        // console.log('the sighting to submit', sighting)
         updateSight(user, sighting)
             // if create is successful, we should navigate to the show page
             .then(() => handleClose())
@@ -51,7 +51,7 @@ const EditSightingModal = (props) => {
                     message: genericUpdateFailure,
                     variant: 'danger',
                 }))
-        console.log('this is the sighting', sighting)
+        // console.log('this is the sighting', sighting)
     }
 
     return (

@@ -14,8 +14,8 @@ const ShowSighting = (props) => {
     const {user, msgAlert} = props
     const { id } = useParams()
     const navigate = useNavigate()
-    console.log("user in ShowSighting", user)
-    console.log("id in ShowSighting", id)
+    // console.log("user in ShowSighting", user)
+    // console.log("id in ShowSighting", id)
 
     useEffect(() => {
         getOneSight(id)

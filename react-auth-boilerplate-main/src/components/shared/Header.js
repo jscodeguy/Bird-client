@@ -8,6 +8,11 @@ const linkStyle = {
 }
 const authenticatedOptions = (
 	<>
+		<Nav.Link>
+			<Link to='/favorites' style={linkStyle}>
+				Favorites
+			</Link>
+		</Nav.Link>
 		<Nav.Item className="m-2">
 			<Link to="/sightings/new" style={linkStyle}>
 				Add New Sighting
