@@ -1,26 +1,27 @@
 import React, {useState, useEffect} from 'react'
-import { getOneFav } from '../../api/favorite'
+import { getOneFav, removeFav } from '../../api/favorite'
 import { useParams } from 'react-router-dom'
-import { removeFav } from '../../api/favorite'
 import { Button } from 'react-bootstrap'
 
 
 const ShowFaves = (props) => {
 
     const {user, msgAlert, triggerRefresh} = props
-    const [favorites, setFaves] = useState(null)
+    const [favorite, setFaves] = useState(null)
     console.log('props in showFaves', props)
     const { id } = useParams()
     console.log('id in showFaves', id)
+    console.log('favorites data', favorite)
     // empty dependency array in useEffect to act like component did mount
     useEffect(() => {
         getOneFav(id)
-            .then(res => setFaves(res.data.favorites))
+            .then(res => {setFaves(res.data.favorite)
+            console.log('res', res)})
             .catch(console.error)
     }, [id])
 
     const destroyFav = () => {
-        removeFav(user, favorites._id)
+        removeFav(user, favorite.id)
             .then(() =>
                 msgAlert({
                     heading: 'Fav updated!',
@@ -37,12 +38,26 @@ const ShowFaves = (props) => {
             }))
     }
 
+    if (!favorite) {
+        return <p>Loading...</p>
+    } else if (favorite.length === 0) {
+        return <p>No favorites yet, go add some</p>
+    }
+
+    if (favorite.length > 0) {
+        favorite.Jsx = favorite.map(favorite => (
+            <>
+                <p>{favorite._id}</p>
+                <p>{favorite.haveSeen}</p>
+                <p>{favorite.bird}</p>
+            </>
+        ))
+    }
+
     return (
         <>
             <h5> Show Favorites</h5>
-            <p>{favorites._id}</p>
-            <p>{favorites.haveSeen}</p>
-            <p>{favorites.bird}</p>
+            <p>{favorite.Jsx}</p>
             <Button onClick={() => destroyFav()}variant="danger">
                 Delete
             </Button>
