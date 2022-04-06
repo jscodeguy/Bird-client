@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react'
-import { getAllFav } from '../../api/favorite'
+import { getAllFav, updateFave } from '../../api/favorite'
 import { Link } from 'react-router-dom'
+import EditFave from './EditFave'
 
 
 const IndexFaves = (props) => {
     const [favorites, setFaves] = useState(null)
-
+    const [modalOpen, setModalOpen] = useState(true)
+    const [updated, setUpdated] = useState(false)
+    const {user, msgAlert} = props
     useEffect(() => {
         getAllFav()
             .then(res => {
@@ -36,6 +39,15 @@ const IndexFaves = (props) => {
             <ul>
                 <li>{favorites.Jsx}</li>
             </ul>
+                <EditFave 
+                favorites={favorites}
+                show={modalOpen}
+                user={user}
+                msgAlert={msgAlert}
+                triggerRefresh={() => setUpdated(prev => !prev)}
+                updateFave={updateFave}
+                handleClose={() => setModalOpen(false)}
+            />
 
         </>
     )

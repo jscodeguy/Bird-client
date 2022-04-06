@@ -3,7 +3,7 @@ import { getOneFav } from '../../api/favorite'
 import { useParams } from 'react-router-dom'
 import { removeFav } from '../../api/favorite'
 import { Button } from 'react-bootstrap'
-
+import EditFave from './EditFave'
 
 const ShowFaves = (props) => {
 
@@ -15,7 +15,7 @@ const ShowFaves = (props) => {
     // empty dependency array in useEffect to act like component did mount
     useEffect(() => {
         getOneFav(id)
-            .then(res => setFaves(res.data.favorites))
+            .then(res => setFaves(res.data.favorites.id))
             .catch(console.error)
     }, [id])
 
@@ -40,9 +40,9 @@ const ShowFaves = (props) => {
     return (
         <>
             <h5> Show Favorites</h5>
-            <p>{favorites._id}</p>
-            <p>{favorites.haveSeen}</p>
-            <p>{favorites.bird}</p>
+            {/* <p>{favorites._id}</p> */}
+            {/* <p>{favorites.haveSeen}</p> */}
+            {/* <p>{favorites.bird}</p> */}
             <Button onClick={() => destroyFav()}variant="danger">
                 Delete
             </Button>

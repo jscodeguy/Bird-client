@@ -8,7 +8,7 @@ const FavoriteForm = ({favorite, handleSubmit, handleChange}) => (
             <Form onSubmit={handleSubmit}>
                 <Form.Label>Have you seen it?</Form.Label>
                 <Form.Check 
-                    label='Have you seen it?'
+                    label='Yes I have'
                     name='haveSeen'
                     defaultChecked={favorite.haveSeen}
                     onChange={handleChange}

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import FavoriteForm from './../shared/FaveForm'
 import { useNavigate } from 'react-router-dom'
-import { createFavorite } from '../../api/faves'
+import { createFavorite } from '../../api/favorite'
 
 const CreateFave = (props) => {
     console.log('this is my props', props)
@@ -12,7 +12,7 @@ const CreateFave = (props) => {
     //navigate will be used later for redirect to show page
     const navigate = useNavigate()
     //this sets the state and an empty favorite object
-    const [favorite, setFave] = useState({haveSeen: false, notes: null, pics: null, bird: ''})
+    const [favorite, setFave] = useState({haveSeen: false, notes: null, pics: null, bird: '', owner:user})
     console.log('fave in create', favorite)
     //this function will handle the live updating of the input fields as they are changed
     const handleChange = (e) => {
