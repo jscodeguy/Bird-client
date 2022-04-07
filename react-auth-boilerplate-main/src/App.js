@@ -15,6 +15,8 @@ import SignUp from './components/auth/SignUp'
 import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
+import CreateFave from './components/Faves/CreateFaves'
+
 import IndexFaves from './components/Faves/IndexFaves'
 import ShowFaves from './components/Faves/ShowFaves'
 import IndexSightings from './components/Sightings/IndexSightings'
@@ -110,6 +112,14 @@ const App = () => {
 					element={
 					<RequireAuth user={user}>
 						<IndexFaves msgAlert={msgAlert} user={user} />
+					</RequireAuth>}
+				/>
+				{/* Favorites: CREATE route */}
+				<Route
+					path='/addFave'
+					element={
+					<RequireAuth user={user}>	
+						<CreateFave user={user} />
 					</RequireAuth>}
 				/>
 		  		{/* Favorites: SHOW route */}

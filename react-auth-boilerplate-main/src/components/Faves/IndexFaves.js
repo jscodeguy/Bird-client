@@ -14,7 +14,6 @@ const cardContainerLayout = {
 
 const IndexFaves = (props) => {
     const [favorites, setFaves] = useState(null)
-
     useEffect(() => {
         getAllFav()
             .then(res => {
@@ -35,7 +34,7 @@ const IndexFaves = (props) => {
             <Card key={favorites.id} style={{ width: '30%' }} className="m-2">
                 <Card.Header>{favorites.bird}</Card.Header>
                 <Card.Body>
-                    <Link to={`./favorites/${favorites._id}`}>View {favorites.haveSeen}</Link>
+                    <Link to={`/favorites/${favorites._id}`}>View {favorites.haveSeen}</Link>
                 </Card.Body>
             </Card>
         ))

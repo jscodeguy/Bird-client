@@ -28,7 +28,11 @@ const authenticatedOptions = (
 				Sign Out
 			</Link>
 		</Nav.Item>
-
+		<Nav.Item>
+			<Link to='addFave' style={linkStyle}>
+				Create a favorite sighting
+			</Link>
+		</Nav.Item>
 		<Nav.Item>
 			<Link to='newPicture' style={linkStyle}>
 				create a picture
