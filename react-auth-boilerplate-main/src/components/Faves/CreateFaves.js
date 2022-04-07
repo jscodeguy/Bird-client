@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import FavoriteForm from './../shared/FaveForm'
 import { useNavigate } from 'react-router-dom'
 import { createFavorite } from '../../api/favorite'

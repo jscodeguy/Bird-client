@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { getAllFav, updateFave } from '../../api/favorite'
+import { getAllFav } from '../../api/favorite'
 import { Link } from 'react-router-dom'
-import EditFave from './EditFave'
 import { Card } from 'react-bootstrap'
 
 // I'm going to declare a style object
@@ -15,9 +14,6 @@ const cardContainerLayout = {
 
 const IndexFaves = (props) => {
     const [favorites, setFaves] = useState(null)
-    const [modalOpen, setModalOpen] = useState(true)
-    const [updated, setUpdated] = useState(false)
-    const {user, msgAlert} = props
     useEffect(() => {
         getAllFav()
             .then(res => {
