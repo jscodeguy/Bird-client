@@ -1,8 +1,9 @@
+// imports
 import React, { useState } from 'react'
 import FavoriteForm from './../shared/FaveForm'
 import { useNavigate } from 'react-router-dom'
 import { createFavorite } from '../../api/favorite'
-
+//this is the function that handles creating the favorites objects
 const CreateFave = (props) => {
     console.log('this is my props', props)
     //destructuring user so we don't need to call this.props
@@ -47,7 +48,7 @@ const CreateFave = (props) => {
         // e === event
         //prevent default prevents the default function of a submit button (refreshing the browser ) from happening
         e.preventDefault()
-
+        // this is the call from axios to run our route
         createFavorite(user, favorite)
             // if create is successful, we should navigate to the show page
             .then(res => {navigate(`/favorites/${res.data.favorite._id}`)})
@@ -59,9 +60,10 @@ const CreateFave = (props) => {
             .catch(() =>
             console.error
             )
+            // logs the new created favorite object
         console.log('this is the created favorite', favorite)
     }
-
+// the form used to create a new object
     return (
         <FavoriteForm 
             favorite={favorite}
@@ -71,5 +73,5 @@ const CreateFave = (props) => {
         />
     )
 }
-
+// export the component
 export default CreateFave

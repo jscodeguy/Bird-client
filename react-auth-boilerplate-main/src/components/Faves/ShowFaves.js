@@ -1,35 +1,44 @@
+//imports
 import React, {useState, useEffect} from 'react'
 import { getOneFav, removeFav, updateFave } from '../../api/favorite'
 import { useParams } from 'react-router-dom'
 import { Button, Card, Spinner, Container } from 'react-bootstrap'
 import EditFave from './EditFave'
 
-
+//sets the layout for the bootstrap card 
 const cardContainerLayout = {
     display: 'flex',
     justifyContent: 'center',
     flexFlow: 'row wrap'
 }
-
+//this is the function that handles showing the individual favorite object
 const ShowFaves = (props) => {
+    //these are where we set the state
     const [favorite, setFaves] = useState(null)
     const [modalOpen, setModalOpen] = useState(false)
     const [updated, setUpdated] = useState(false)
+    //this line destructures from props
     const {user, msgAlert, triggerRefresh} = props
     console.log('props in showFaves', props)
+    // this line is used to destructure the id from the response parameters
     const { id } = useParams()
     console.log('id in showFaves', id)
     console.log('favorites data', favorite)
     // empty dependency array in useEffect to act like component did mount
     useEffect(() => {
+        // this is the axios call to get the individual favorite
         getOneFav(id)
+        //promise chain sets the state to the specified object or returns error
             .then(res => {setFaves(res.data.favorite)
             console.log('res', res)})
             .catch(console.error)
+            // dependency array
     }, [updated])
-
+// the delete function
     const destroyFav = () => {
+        //takes the user and shown object as params
         removeFav(user, favorite._id)
+        //after deleting, returns success and refreshes to show data has been deleted
             .then(() =>
                 msgAlert({
                     heading: 'Fav updated!',
@@ -37,7 +46,7 @@ const ShowFaves = (props) => {
                     variant: 'success',
                 }))
             .then(() => triggerRefresh())
-            // if there is an error, we'll send an error message
+            // else there is an error, we'll send an error message
             .catch(() =>
                 msgAlert({
                     heading: 'Oh No!',
@@ -47,6 +56,7 @@ const ShowFaves = (props) => {
     }
     console.log('favorite length', favorite)
     console.log('favorite length', typeof favorite)
+    // if there is no object to show, display loading
     if (!favorite) {
         return (
             <Container fluid className="justify-content-center">
@@ -56,7 +66,7 @@ const ShowFaves = (props) => {
             </Container>
         )
     }
-
+//if there is an object to show, pass the props to small tags
     if (favorite) {
         favorite.Jsx =(
             <>
@@ -70,10 +80,9 @@ const ShowFaves = (props) => {
                     </Card.Body>
                 </Card>
             </>
-        // ))
         )
     }
-
+//return the data, assign the buttons their respsective functions and give the edit fave component the props
     return (
         <>
             <h5> Show Favorites</h5>
@@ -99,5 +108,5 @@ const ShowFaves = (props) => {
         </>
     )
 }
-
+//exports the component
 export default ShowFaves
