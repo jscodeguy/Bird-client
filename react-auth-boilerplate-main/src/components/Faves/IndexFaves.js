@@ -32,6 +32,7 @@ const IndexFaves = (props) => {
 
     return ( 
         <>
+
             <h5> All faves</h5>
             <ul>
                 <li>{favorites.Jsx}</li>

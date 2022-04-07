@@ -8,6 +8,9 @@ import AutoDismissAlert from './components/shared/AutoDismissAlert/AutoDismissAl
 import Header from './components/shared/Header'
 import RequireAuth from './components/shared/RequireAuth'
 import Home from './components/Home'
+import IndexPictures from './components/Photos/IndexPhotos'
+import ShowPictures from './components/Photos/ShowPhoto'
+import CreatePicture from './components/Photos/NewPhoto'
 import SignUp from './components/auth/SignUp'
 import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
@@ -62,6 +65,33 @@ const App = () => {
 						path='/sign-in'
 						element={<SignIn msgAlert={msgAlert} setUser={setUser} />}
 					/>
+					<Route
+						path='/pictures'
+						element={
+						<RequireAuth user={user}>
+						<IndexPictures msgAlert={msgAlert} user={user} />
+						</RequireAuth>
+						}
+					/>
+					<Route
+						path='/pictures/:id'
+						element={
+						<RequireAuth user={user}>
+						<ShowPictures msgAlert={msgAlert} user={user} />
+						</RequireAuth>
+						}
+					/>
+					<Route
+						path='/newPicture'
+						element={
+						<RequireAuth user={user}>
+						<CreatePicture msgAlert={msgAlert} user={user} />
+						</RequireAuth>}
+					/>
+				
+					
+					
+					
           <Route
             path='/sign-out'
             element={
