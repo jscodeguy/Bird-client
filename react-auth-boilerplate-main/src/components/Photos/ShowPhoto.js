@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom'
 import { Image, Button, Container } from 'react-bootstrap'
 import {showPictureSucess, showPictureFailure} from '../shared/AutoDismissAlert/messages'
 import { useNavigate } from 'react-router-dom'
+import { CloudinaryContext } from "cloudinary-react"
 
 
 const ShowPictures = (props) => {
@@ -57,10 +58,18 @@ const ShowPictures = (props) => {
     return (
 
         <>
+
+            <CloudinaryContext cloudName="birdbrains">
+            <div>
+                <Image publicId="sample" width="50" />
+            </div>
+            <Image publicId="sample" width="0.5" />
+            </CloudinaryContext>
+
             <Container className="m-5">
-                    <p className="pic-title">"{picture.description}" by {picture.owner}</p>
-                    <Image src={picture.source} className="img-fluid shadow-4"/>
-                    <p>Featuring: {picture.bird}</p>
+                <p className="pic-title">"{picture.description}" by {picture.owner}</p>
+                <Image src={picture.source} className="img-fluid shadow-4"/>
+                <p>Featuring: {picture.bird}</p>
 
                 <Button onClick={() => removeThePicture(props)} className="m-2" variant="danger">
                     Delete picture
