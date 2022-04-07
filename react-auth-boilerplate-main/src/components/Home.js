@@ -1,4 +1,4 @@
-import IndexSightings from "./Sightings/IndexSightings"
+git import IndexSightings from "./Sightings/IndexSightings"
 import ShowSightings from "./Sightings/ShowSightings"
 import ShowFaves from "./Faves/ShowFaves"
 import IndexFaves from "./Faves/IndexFaves"
