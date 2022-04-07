@@ -28,6 +28,12 @@ const authenticatedOptions = (
 				Sign Out
 			</Link>
 		</Nav.Item>
+
+		<Nav.Item>
+			<Link to='newPicture' style={linkStyle}>
+				create a picture
+			</Link>
+		</Nav.Item>
 	</>
 )
 
@@ -52,6 +58,11 @@ const alwaysOptions = (
 		<Nav.Link>
 			<Link to='/sightings' style={linkStyle}>
 				Sightings
+			</Link>
+		</Nav.Link>
+		<Nav.Link>
+			<Link to='/pictures' style={linkStyle}>
+				Pictures
 			</Link>
 		</Nav.Link>
 	</>

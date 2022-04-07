@@ -44,6 +44,7 @@ const IndexFaves = (props) => {
 
     return ( 
         <>
+
             <h5> All favorites</h5>
             <div style={cardContainerLayout}>
                 {favorites.Jsx}
