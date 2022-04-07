@@ -5,8 +5,10 @@ const Home = (props) => {
 
 	return (
 		<>
+
 		<h2>BirdBrains</h2>
 		<h3>A bird watching app for watchers who love birds</h3>
+
 		</>
 	)
 }
