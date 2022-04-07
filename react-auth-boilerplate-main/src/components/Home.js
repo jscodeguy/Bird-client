@@ -1,19 +1,12 @@
-import IndexSightings from "./Sightings/IndexSightings"
-import ShowSightings from "./Sightings/ShowSightings"
-import ShowFaves from "./Faves/ShowFaves"
-import IndexFaves from "./Faves/IndexFaves"
-import IndexPictures from "./Photos/IndexPhotos"
-import ShowPictures from "./Photos/ShowPhoto"
+
 const Home = (props) => {
 	// const { msgAlert, user } = props
 	// console.log('props in home', props)
 
 	return (
 		<>
-		<h2>Home Page</h2>
-
-
-	
+		<h2>BirdBrains</h2>
+		<h3>A bird watching app for watchers who love birds</h3>
 		</>
 	)
 }
