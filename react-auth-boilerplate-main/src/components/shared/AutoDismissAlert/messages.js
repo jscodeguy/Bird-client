@@ -6,6 +6,12 @@ const messages = {
 	signOutSuccess: 'Come back soon!',
 	changePasswordSuccess: 'Password changed successfully!',
 	changePasswordFailure:'Failed to change passwords. Check your old password and try again.',
+	showSightingSuccess: "Sighting found!",
+	showSightingFailure: "Couldn't find anything, try again.",
+	createSightingSuccess: "New bird sighting added!",
+	createSightingFailure: "Something went wrong, bird sighting not added. Please try again.",
+	genericUpdateSuccess: "Update successful!",
+	genericUpdateFailure: "Update not saved, please try again.",
 }
 
 module.exports = messages
