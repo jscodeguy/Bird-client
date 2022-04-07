@@ -5,7 +5,7 @@ import { Form, Container, Button } from 'react-bootstrap'
 const FavoriteForm = ({favorite, handleSubmit, handleChange}) => (
 
 <Container className="justify-content-center">
-            <Form onSubmit={handleSubmit}>
+            <Form onSubmit={(e) => handleSubmit(e)}>
                 <Form.Label>Have you seen it?</Form.Label>
                 <Form.Check 
                     label='Yes I have'

@@ -11,7 +11,7 @@ const EditFave = (props) => {
     const handleChange = (e) => {
         // e === event
         e.persist()
-
+console.log('this is the favorite log', favorite)   
         setFavorite(prevFave => {
             const name = e.target.name
             let value = e.target.value
@@ -38,8 +38,9 @@ const EditFave = (props) => {
 
         console.log('the favorite to submit', favorite)
         updateFave(user, favorite)
-            // if create is successful, we should navigate to the show page
-            .then(() => handleClose())
+        // if create is successful, we should navigate to the show page
+        .then(() => handleClose())
+        // console.log('console time')
             // then we send a success message
             .then(() =>
                 msgAlert({
@@ -49,12 +50,15 @@ const EditFave = (props) => {
                 }))
             .then(() => triggerRefresh())
             // if there is an error, we'll send an error message
-            .catch(() =>
+            .catch((err) =>{
+                console.log('this is the big dumb error', err)
                 msgAlert({
                     heading: 'Oh No!',
                     message: 'that aint it',
                     variant: 'danger',
-                }))
+                })
+            })
+            
         console.log('this is the favorite', favorite)
     }
     
@@ -63,12 +67,12 @@ const EditFave = (props) => {
         <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton></Modal.Header>
             <Modal.Body>
-                {/* <FavoriteForm 
+                <FavoriteForm 
                     favorite={favorite}
                     handleChange={handleChange}
-                    handleSubmit={handleSubmit}
+                    handleSubmit= {handleSubmit}
                     heading="Edit favorite!"
-                /> */}
+                />
             </Modal.Body>
         </Modal>
     )

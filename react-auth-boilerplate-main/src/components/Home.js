@@ -1,13 +1,4 @@
 
-import IndexSightings from "./Sightings/IndexSightings"
-import ShowSightings from "./Sightings/ShowSighting"
-import ShowFaves from "./Faves/ShowFaves"
-import IndexFaves from "./Faves/IndexFaves"
-import IndexPhotos from "./Photos/IndexPhotos"
-import ShowPhotos from "./Photos/ShowPhoto"
-import CreateFave from "./Faves/CreateFaves"
-
-
 
 const Home = (props) => {
 	// const { msgAlert, user } = props

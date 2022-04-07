@@ -24,17 +24,25 @@ export const createFavorite = (user, newFave) => {
         data: { favorite: newFave }
     })
 }
-// PATCH -> update function
+// Patch -> update function
 export const updateFave = (user, updatedFave) => {
     console.log('user', user)
-    console.log('this is newFave', updatedFave)
+    console.log('this is updatedFave', updatedFave)
+    // const jsonFave = JSON.stringify(updatedFave)
+    // console.log('this is the json string', jsonFave)
+    const sendData = { favorite: {
+        haveSeen: updatedFave.haveSeen, 
+        notes: updatedFave.notes, 
+        pics: updatedFave.pics, 
+        bird: updatedFave.bird
+    }}
     return axios({
         url: `${apiUrl}/favorites/${updatedFave._id}`,
         method: 'PATCH',
         headers: {
             Authorization: `Token token=${user.token}`
         },
-        data: { favorite: updatedFave }
+        data: sendData
     })
 }
 // DELETE -> remove function
