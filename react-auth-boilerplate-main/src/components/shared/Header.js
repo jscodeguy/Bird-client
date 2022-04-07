@@ -8,17 +8,31 @@ const linkStyle = {
 }
 const authenticatedOptions = (
 	<>
-		<Nav.Item>
+		<Nav.Link>
+			<Link to='/favorites' style={linkStyle}>
+				Favorites
+			</Link>
+		</Nav.Link>
+		<Nav.Item className="m-2">
+			<Link to="/sightings/new" style={linkStyle}>
+				Add New Sighting
+			</Link>
+		</Nav.Item>
+		<Nav.Item className="m-2">
 			<Link to='change-password' style={linkStyle}>
 				Change Password
 			</Link>
 		</Nav.Item>
-		<Nav.Item>
+		<Nav.Item className="m-2">
 			<Link to='sign-out' style={linkStyle}>
 				Sign Out
 			</Link>
 		</Nav.Item>
-
+		<Nav.Item>
+			<Link to='addFave' style={linkStyle}>
+				Create a favorite sighting
+			</Link>
+		</Nav.Item>
 		<Nav.Item>
 			<Link to='newPicture' style={linkStyle}>
 				create a picture
@@ -35,11 +49,11 @@ const authenticatedOptions = (
 
 const unauthenticatedOptions = (
 	<>
-        <Nav.Item>
-		    <Link to='sign-up' style={linkStyle}>Sign Up</Link>
+        <Nav.Item className="m-2">
+			<Link to='sign-up' style={linkStyle}>Sign Up</Link>
         </Nav.Item>
-        <Nav.Item>
-		    <Link to='sign-in' style={linkStyle}>Sign In</Link>
+        <Nav.Item className="m-2">
+			<Link to='sign-in' style={linkStyle}>Sign In</Link>
         </Nav.Item>
 	</>
 )
@@ -51,6 +65,16 @@ const alwaysOptions = (
 				Home
 			</Link>
 		</Nav.Link>
+		<Nav.Link>
+			<Link to='/sightings' style={linkStyle}>
+				Sightings
+			</Link>
+		</Nav.Link>
+		<Nav.Link>
+			<Link to='/pictures' style={linkStyle}>
+				Pictures
+			</Link>
+		</Nav.Link>
 	</>
 )
 
@@ -58,7 +82,11 @@ const Header = ({ user }) => (
 	<Navbar bg='primary' variant='dark' expand='md'>
 		<Navbar.Brand>
             <Link to='/' style={linkStyle}>
+<<<<<<< HEAD
                 Bird Brains
+=======
+                BirdBrains
+>>>>>>> cb59446877059eb3f278c1d2e86178f661cce3d7
             </Link>
         </Navbar.Brand>
 		<Navbar.Toggle aria-controls='basic-navbar-nav' />
