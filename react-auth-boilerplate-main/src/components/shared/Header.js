@@ -82,17 +82,7 @@ const Header = ({ user }) => (
 	<Navbar bg='primary' variant='dark' expand='md'>
 		<Navbar.Brand>
             <Link to='/' style={linkStyle}>
-<<<<<<< HEAD
 
-                BirdBrains
-
-=======
-<<<<<<< HEAD
-                Bird Brains
-=======
-                BirdBrains
->>>>>>> cb59446877059eb3f278c1d2e86178f661cce3d7
->>>>>>> StephanieBranch
             </Link>
         </Navbar.Brand>
 		<Navbar.Toggle aria-controls='basic-navbar-nav' />
