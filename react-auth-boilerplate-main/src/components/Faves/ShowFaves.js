@@ -71,6 +71,17 @@ const ShowFaves = (props) => {
         )
     }
 
+    if (!favorites) {
+        return (
+            <h1>Loading....</h1>
+        )
+    }
+
+    // Pulling the comments array into a Jsx object so we can render them
+    favorites.Jsx = favorites.comments.map(favorites => (
+        <li key={favorites._id}>{favorites.note} by {favorites.author}</li>
+    ))
+
     return (
         <>
             <h5> Show Favorites</h5>
