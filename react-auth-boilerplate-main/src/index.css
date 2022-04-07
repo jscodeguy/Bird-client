@@ -15,6 +15,7 @@ code {
 }
 
 
+
 .home { 
   background-image:url("https://i.ibb.co/yWgJqZV/European-Roller-Rajasthan-India-By-Nishant-Rana-720x480.jpg") ;
   position: relative;
@@ -28,7 +29,24 @@ code {
 
 
 
-/* <a href="https://ibb.co/yWgJqZV"><img src="https://i.ibb.co/yWgJqZV/European-Roller-Rajasthan-India-By-Nishant-Rana-720x480.jpg" alt="European-Roller-Rajasthan-India-By-Nishant-Rana-720x480" border="0"></a> */
+
+.pic-title {
+  text-align: center;
+  padding: 10px;
+  font-size: 30px;
+  font-weight: bold;
+}
 
 
-/* <img src="https://i.ibb.co/yWgJqZV/European-Roller-Rajasthan-India-By-Nishant-Rana-720x480.jpg"></img> */
+
+
+.comment-wrap-title {
+  font-size: 30px;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+
+.bordertown {
+  border: 20px solid black;
+}
+
