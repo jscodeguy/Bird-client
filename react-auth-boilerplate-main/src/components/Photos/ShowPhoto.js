@@ -41,14 +41,6 @@ const ShowPictures = (props) => {
                 })
         }
 
-    const navigate = useNavigate()
-    const [picture, setPicture] = useState(null)
-    // console.log('props in showpictures', props)
-    const { id } = useParams()
-    // console.log('id in showpicture', id)
-    // empty dependency array in useEffect to act like component did mount
-
-    
     useEffect(() => {            
         getOnePicture(id)
             .then(res => setPicture(res.data.picture))

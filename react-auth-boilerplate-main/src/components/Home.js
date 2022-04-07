@@ -11,11 +11,10 @@ import {Container} from "react-bootstrap"
 const Home = (props) => {
 	// const { msgAlert, user } = props
 
-
-
 	return (
 		<>
 		<Container className="home"> 
+
 
 		<h2>BirdBrains</h2>
 		<h3>A bird watching app for watchers who love birds</h3>
