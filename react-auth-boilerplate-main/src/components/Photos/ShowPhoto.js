@@ -35,7 +35,7 @@ const ShowPictures = (props) => {
                         variant: 'success',
                     })
                 })
-                .then(() => {navigate(`/`)})
+                .then(() => {navigate(`/pictures`)})
                 .catch(() => {
                     props.msgAlert({
                         heading: 'Uh oh!',

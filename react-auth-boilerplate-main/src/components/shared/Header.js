@@ -24,6 +24,12 @@ const authenticatedOptions = (
 				create a picture
 			</Link>
 		</Nav.Item>
+
+		<Nav.Item>
+			<Link to='pictures' style={linkStyle}>
+				Photo
+			</Link>
+		</Nav.Item>
 	</>
 )
 
@@ -52,7 +58,7 @@ const Header = ({ user }) => (
 	<Navbar bg='primary' variant='dark' expand='md'>
 		<Navbar.Brand>
             <Link to='/' style={linkStyle}>
-                react-auth-template
+                Bird Brains
             </Link>
         </Navbar.Brand>
 		<Navbar.Toggle aria-controls='basic-navbar-nav' />
