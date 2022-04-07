@@ -14,7 +14,6 @@ const cardContainerLayout = {
 
 const IndexFaves = (props) => {
     const [favorites, setFaves] = useState(null)
-
     useEffect(() => {
         getAllFav()
             .then(res => {

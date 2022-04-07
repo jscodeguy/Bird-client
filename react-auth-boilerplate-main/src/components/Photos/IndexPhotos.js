@@ -2,9 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { getAllPictures } from '../../api/photos.js'
 import { Link } from 'react-router-dom'
 
-
-
-
 const IndexPictures = (props) => {
     const [pictures, setPictures] = useState(null)
 
@@ -27,28 +24,18 @@ const IndexPictures = (props) => {
 
     if (pictures.length > 0) {
         pictures.Jsx = pictures.map(picture => (
-       
-        
             <li key={picture.id}>
-            <Link to={`./${picture._id}`}><img src= {picture.source} height="100" /></Link>
+                <Link to={`./${picture._id}`}><img src= {picture.source} height="100" /></Link>
             </li>
-          
-
         ))
-    
-    
     }
 
     return (
         <>
             <h3>All the pictures</h3>
-           
                 {pictures.Jsx}
-            
         </>
     )
 }
 
-
 export default IndexPictures
-

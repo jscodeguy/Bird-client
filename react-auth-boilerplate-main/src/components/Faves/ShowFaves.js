@@ -1,7 +1,9 @@
 import React, {useState, useEffect} from 'react'
-import { getOneFav, removeFav } from '../../api/favorite'
+import { getOneFav, removeFav, updateFave } from '../../api/favorite'
 import { useParams } from 'react-router-dom'
 import { Button, Card, Spinner, Container } from 'react-bootstrap'
+import EditFave from './EditFave'
+
 
 const cardContainerLayout = {
     display: 'flex',
@@ -10,9 +12,10 @@ const cardContainerLayout = {
 }
 
 const ShowFaves = (props) => {
-
-    const {user, msgAlert, triggerRefresh} = props
     const [favorite, setFaves] = useState(null)
+    const [modalOpen, setModalOpen] = useState(false)
+    const [updated, setUpdated] = useState(false)
+    const {user, msgAlert, triggerRefresh} = props
     console.log('props in showFaves', props)
     const { id } = useParams()
     console.log('id in showFaves', id)
@@ -23,7 +26,7 @@ const ShowFaves = (props) => {
             .then(res => {setFaves(res.data.favorite)
             console.log('res', res)})
             .catch(console.error)
-    }, [id])
+    }, [updated])
 
     const destroyFav = () => {
         removeFav(user, favorite._id)
@@ -79,6 +82,18 @@ const ShowFaves = (props) => {
                 <Button onClick={() => destroyFav()}variant="danger">
                     Delete
                 </Button>
+                <Button onClick={() => setModalOpen(true)} className="m-2" variant="warning">
+                    Edit
+                </Button>
+                <EditFave 
+                favorite={favorite}
+                show={modalOpen}
+                user={user}
+                msgAlert={msgAlert}
+                triggerRefresh={() => setUpdated(prev => !prev)}
+                updateFave={updateFave}
+                handleClose={() => setModalOpen(false)}
+            />
             </div>
             
         </>
