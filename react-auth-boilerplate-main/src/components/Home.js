@@ -1,5 +1,5 @@
 import IndexSightings from "./Sightings/IndexSightings"
-import ShowSightings from "./Sightings/ShowSightings"
+import ShowSightings from "./Sightings/ShowSighting"
 import ShowFaves from "./Faves/ShowFaves"
 import IndexFaves from "./Faves/IndexFaves"
 import IndexPhotos from "./Photos/IndexPhotos"
@@ -13,12 +13,12 @@ const Home = (props) => {
 		<>
 			<h2>Home Page</h2>
 
-			<IndexSightings />
+			{/* <IndexSightings />
 			<ShowSightings />
 			<ShowFaves />
 			<IndexFaves />
 			<IndexPhotos />
-			<ShowPhotos />
+			<ShowPhotos /> */}
 		</>
 	)
 }

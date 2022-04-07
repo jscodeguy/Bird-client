@@ -1,8 +1,13 @@
 import React, {useState, useEffect} from 'react'
 import { getOneFav, removeFav } from '../../api/favorite'
 import { useParams } from 'react-router-dom'
-import { Button } from 'react-bootstrap'
+import { Button, Card, Spinner, Container } from 'react-bootstrap'
 
+const cardContainerLayout = {
+    display: 'flex',
+    justifyContent: 'center',
+    flexFlow: 'row wrap'
+}
 
 const ShowFaves = (props) => {
 
@@ -21,7 +26,7 @@ const ShowFaves = (props) => {
     }, [id])
 
     const destroyFav = () => {
-        removeFav(user, favorite.id)
+        removeFav(user, favorite._id)
             .then(() =>
                 msgAlert({
                     heading: 'Fav updated!',
@@ -37,30 +42,45 @@ const ShowFaves = (props) => {
                     variant: 'danger',
             }))
     }
-
+    console.log('favorite length', favorite)
+    console.log('favorite length', typeof favorite)
     if (!favorite) {
-        return <p>Loading...</p>
-    } else if (favorite.length === 0) {
-        return <p>No favorites yet, go add some</p>
+        return (
+            <Container fluid className="justify-content-center">
+                <Spinner animation="border" role="status" variant="warning" >
+                    <span className="visually-hidden">Loading....</span>
+                </Spinner>
+            </Container>
+        )
     }
 
-    if (favorite.length > 0) {
-        favorite.Jsx = favorite.map(favorite => (
+    if (favorite) {
+        favorite.Jsx =(
             <>
-                <p>{favorite._id}</p>
-                <p>{favorite.haveSeen}</p>
-                <p>{favorite.bird}</p>
+                <Card>
+                    <Card.Body>
+                        <Card.Text>
+                            <small>Id: {favorite._id}</small>
+                            <small>Have Seen: {favorite.haveSeen}</small>
+                            <small>Bird: {favorite.bird}</small>
+                        </Card.Text>
+                    </Card.Body>
+                </Card>
             </>
-        ))
+        // ))
+        )
     }
 
     return (
         <>
             <h5> Show Favorites</h5>
-            <p>{favorite.Jsx}</p>
-            <Button onClick={() => destroyFav()}variant="danger">
-                Delete
-            </Button>
+            <div style={cardContainerLayout}>
+                {favorite.Jsx}
+                <Button onClick={() => destroyFav()}variant="danger">
+                    Delete
+                </Button>
+            </div>
+            
         </>
     )
 }
