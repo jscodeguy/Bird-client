@@ -13,7 +13,7 @@ const CreatePicture = (props) => {
     console.log('user in create', user)
     const navigate = useNavigate()
     // we'll need two states
-    const [picture, setPicture] = useState({source: '', description: '', notes: '', bird: ''})
+    const [picture, setPicture] = useState({ source: 'd', description: '', bird: 'y', owner: user._id})
     console.log('picture in create', picture)
     //  an empty picture object
     // and a createdId (used to navigate)
@@ -27,9 +27,6 @@ const CreatePicture = (props) => {
             const name = e.target.name
             let value = e.target.value
             console.log('etarget type', e.target.type)
-            console.log('this is e.target checked', e.target.checked)
-
-
             const updatedValue = { [name]: value }
 
             console.log('prevPicture', prevPicture)
@@ -44,10 +41,15 @@ const CreatePicture = (props) => {
         e.preventDefault()
 
         createPicture(user, picture)
+
             // if create is successful, we should navigate to the show page
-            .then(res => {navigate(`/pictures/${res.data.picture.id}`)})
+            .then(res => {
+                console.log("created pic response", res)
+                navigate(`/pictures/${res.data.picture._id}`)})
+
             // then we send a success message
             .then(() =>
+            
                 msgAlert({
                     heading: 'picture Added! Success!',
                     message: createPictureSuccess,
@@ -73,13 +75,13 @@ const CreatePicture = (props) => {
                     name='description'
                     onChange={handleChange}
                 />
-                <Form.Label>Notes</Form.Label>
+                {/* <Form.Label>Notes</Form.Label>
                 <Form.Control 
                     placeholder="what type of animal is your pet?"
                     value={picture.notes}
                     name='notes'
                     onChange={handleChange}
-                />
+                /> */}
                
                 <Button type='submit'>Submit</Button>
             </Form>

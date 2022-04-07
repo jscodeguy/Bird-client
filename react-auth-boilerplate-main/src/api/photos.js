@@ -14,12 +14,29 @@ export const getOnePicture = (pictureId) => {
 
 // POST -> create function
 export const createPicture = (user, newPicture) => {
+    console.log("this is the new picture", newPicture)
     return axios({
         url: `${apiUrl}/pictures`,
         method: 'POST',
         headers: {
             Authorization: `Token token=${user.token}`
         },
-        data: newPicture
+        data: {picture: newPicture}
+    })
+}
+
+
+// DELETE
+// API call to destroy a sighting from the database.
+export const removePicture = (user, pictureId) => {
+    console.log(typeof pictureId)
+    console.log("user in delete:", user)
+    // console.log("id in delete:", pictureId)
+    return axios({
+        url: `${apiUrl}/pictures/${pictureId}`,
+        method: "DELETE",
+        headers: {
+            Authorization: `Token token=${user.token}`
+        }
     })
 }

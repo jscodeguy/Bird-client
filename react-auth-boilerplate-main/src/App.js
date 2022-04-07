@@ -58,15 +58,26 @@ const App = () => {
 					/>
 					<Route
 						path='/pictures'
-						element={<IndexPictures msgAlert={msgAlert} setUser={setUser} />}
+						element={
+						<RequireAuth user={user}>
+						<IndexPictures msgAlert={msgAlert} user={user} />
+						</RequireAuth>
+						}
 					/>
 					<Route
 						path='/pictures/:id'
-						element={<ShowPictures msgAlert={msgAlert} setUser={setUser} />}
+						element={
+						<RequireAuth user={user}>
+						<ShowPictures msgAlert={msgAlert} user={user} />
+						</RequireAuth>
+						}
 					/>
 					<Route
 						path='/newPicture'
-						element={<CreatePicture msgAlert={msgAlert} setUser={setUser} />}
+						element={
+						<RequireAuth user={user}>
+						<CreatePicture msgAlert={msgAlert} user={user} />
+						</RequireAuth>}
 					/>
 				
 					
