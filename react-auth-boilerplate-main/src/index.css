@@ -5,9 +5,30 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(230, 230, 230) !important;
+
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.home { 
+  background-image:url("https://i.ibb.co/yWgJqZV/European-Roller-Rajasthan-India-By-Nishant-Rana-720x480.jpg") ;
+  position: relative;
+  display: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+
+}
+
+
+
+
+/* <a href="https://ibb.co/yWgJqZV"><img src="https://i.ibb.co/yWgJqZV/European-Roller-Rajasthan-India-By-Nishant-Rana-720x480.jpg" alt="European-Roller-Rajasthan-India-By-Nishant-Rana-720x480" border="0"></a> */
+
+
+/* <img src="https://i.ibb.co/yWgJqZV/European-Roller-Rajasthan-India-By-Nishant-Rana-720x480.jpg"></img> */
