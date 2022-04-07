@@ -28,8 +28,6 @@ export const createFavorite = (user, newFave) => {
 export const updateFave = (user, updatedFave) => {
     console.log('user', user)
     console.log('this is updatedFave', updatedFave)
-    // const jsonFave = JSON.stringify(updatedFave)
-    // console.log('this is the json string', jsonFave)
     const sendData = { favorite: {
         haveSeen: updatedFave.haveSeen, 
         notes: updatedFave.notes, 
