@@ -37,7 +37,7 @@ const ShowSighting = (props) => {
     }, [updated])
 
     const removeTheSighting = () => {
-        removeSight(user, sighting.id)
+        removeSight(user, sighting._id)
             .then(() => {
                 msgAlert({
                     heading: 'Bye Bye Birdie',
