@@ -60,6 +60,11 @@ const alwaysOptions = (
 				Sightings
 			</Link>
 		</Nav.Link>
+		<Nav.Link>
+			<Link to='/pictures' style={linkStyle}>
+				Pictures
+			</Link>
+		</Nav.Link>
 	</>
 )
 
