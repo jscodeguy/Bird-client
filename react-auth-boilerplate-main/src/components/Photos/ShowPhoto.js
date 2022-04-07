@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import { getOnePicture, removePicture} from '../../api/photos.js'
 import { useParams } from 'react-router-dom'
-import { Button } from 'react-bootstrap'
+import { Image, Button, Container } from 'react-bootstrap'
 import {showPictureSucess, showPictureFailure} from '../shared/AutoDismissAlert/messages'
 import { useNavigate } from 'react-router-dom'
 
@@ -50,23 +50,27 @@ const ShowPictures = (props) => {
     
     // Pulling the comments array into a Jsx object so we can render them
     picture.Jsx = picture.comments.map(picture => (
-        <li key={picture._id}>{picture.note} by {picture.author}</li>
+        <p key={picture._id}><strong>{picture.author} said:</strong><br/>
+        {picture.note}</p>
     ))
 
     return (
+
         <>
-            <h5> show photos</h5>
-            <p><img src={picture.source}/></p>
-            <p>{picture.description}</p>
-            <p>{picture.bird}</p>
+            <Container className="m-5">
+                    <p className="pic-title">"{picture.description}" by {picture.owner}</p>
+                    <Image src={picture.source} className="img-fluid shadow-4"/>
+                    <p>Featuring: {picture.bird}</p>
 
-            <Button onClick={() => removeThePicture(props)} className="m-2" variant="danger">
-                Delete bird picture
-            </Button>
+                <Button onClick={() => removeThePicture(props)} className="m-2" variant="danger">
+                    Delete picture
+                </Button>
+            </Container>
 
-            <h2>Comments? Comments!</h2>
-            <p>Let's see them.</p>
-            <ul>{picture.Jsx}</ul>
+            <Container className="comment-wrap">
+                <p className="comment-wrap-title">Comments? Comments!</p>
+                    {picture.Jsx}
+            </Container>
         </>
     )
 }

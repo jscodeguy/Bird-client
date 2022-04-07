@@ -11,3 +11,26 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.pic-title {
+  text-align: center;
+  padding: 10px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.comment-wrap {
+  border: 4px solid black;
+  padding: 8px;
+  margin-bottom: 50px;
+}
+
+.comment-wrap-title {
+  font-size: 30px;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+
+.bordertown {
+  border: 20px solid black;
+}
