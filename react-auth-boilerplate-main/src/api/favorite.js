@@ -13,7 +13,8 @@ export const getOneFav = (favoritesId) => {
 
 // DELETE -> remove function
 export const removeFav = (user, favoritesId) => {
-    console.log('user', user)
+    console.log('THIS IS USER IN REMOVE FAV', user)
+    console.log('THIS IS FAVORITES ID', favoritesId)
     return axios({
         url: `${apiUrl}/favorites/${favoritesId}`,
         method: 'DELETE',

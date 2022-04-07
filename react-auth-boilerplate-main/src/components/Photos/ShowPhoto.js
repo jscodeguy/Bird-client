@@ -71,6 +71,7 @@ const ShowPictures = (props) => {
                 <p className="comment-wrap-title">Comments? Comments!</p>
                     {picture.Jsx}
             </Container>
+
         </>
     )
 }
