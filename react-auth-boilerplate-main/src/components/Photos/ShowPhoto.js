@@ -49,25 +49,28 @@ const ShowPictures = (props) => {
     }
     
     // Pulling the comments array into a Jsx object so we can render them
-    if(picture ) {
-        
-        picture.Jsx = (
-        <p key={picture._id}><strong>{picture.author} said:</strong><br/>
-        {picture.note}</p>
-    )
-    }
+
+    picture.Jsx = picture.comments.map(picture => (
+        <p key={picture._id}><strong>
+        - {picture.note}</strong></p>
+    ))
+
 
     return (
 
         <>
             <Container className="m-5">
-                <p className="pic-title">"{picture.description}" by {picture.owner}</p>
-                <Image src={picture.source} className="img-fluid shadow-4"/>
-                <p>Featuring: {picture.bird}</p>
+                <p className="pic-title">"{picture.description}"</p>
+                <Image src={picture.source} className="img-fluid shadow-4"/><br/>
+                {/* <p>Featuring: {picture.bird}</p> */}
 
                 <Button onClick={() => removeThePicture(props)} className="m-2" variant="danger">
                     Delete picture
                 </Button>
+                {/* <Button onClick={() => makeComment(props)}
+                    className="m-2" variant="success">
+                        Leave comment
+                    </Button> */}
             </Container>
 
             <Container className="comment-wrap">
