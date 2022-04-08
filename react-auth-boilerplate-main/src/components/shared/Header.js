@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import { Link } from 'react-router-dom'
+import { Image } from "react-bootstrap"
 
 
 const linkStyle = {
@@ -10,11 +11,11 @@ const linkStyle = {
 }
 const authenticatedOptions = (
 	<>
-		<Nav.Link>
+		{/* <Nav.Link>
 			<Link to='/favorites' style={linkStyle}>
 				Favorites
 			</Link>
-		</Nav.Link>
+		</Nav.Link> */}
 		<Nav.Item className="m-2">
 			<Link to="/sightings/new" style={linkStyle}>
 				Add New Sighting
@@ -30,11 +31,11 @@ const authenticatedOptions = (
 				Sign Out
 			</Link>
 		</Nav.Item>
-		<Nav.Item>
+		{/* <Nav.Item>
 			<Link to='addFave' style={linkStyle}>
 				Create a favorite sighting
 			</Link>
-		</Nav.Item>
+		</Nav.Item> */}
 		<Nav.Item>
 			<Link to='newPicture' style={linkStyle}>
 				create a picture
@@ -82,11 +83,11 @@ const alwaysOptions = (
 const Header = ({ user }) => (
 	<Navbar bg='primary' variant='dark' expand='md'>
 		<Navbar.Brand>
-			{/* <Image src="./public/rf-feather.png"> */}
+			
             <Link to='/' style={linkStyle}>
                 Ruffled Feathers
             </Link>
-			{/* </Image> */}
+			
         </Navbar.Brand>
 		<Navbar.Toggle aria-controls='basic-navbar-nav' />
 		<Navbar.Collapse id='basic-navbar-nav'>

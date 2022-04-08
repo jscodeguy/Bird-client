@@ -24,11 +24,12 @@ const IndexPictures = (props) => {
     if (pictures.length > 0) {
         pictures.Jsx = pictures.map(picture => (
             <div className="pic-wrap">
-                <img key={picture.id}
-                    className="pic-img bordertown"
-                    src={picture.source}
-                    alt="bird picture"
-                />
+                <Link to={`./${picture._id}`}>
+                    <img key={picture.id}
+                        className="pic-img bordertown"
+                        src={picture.source}
+                        alt="bird picture"/>
+                </Link>
             </div>
         )
     )}
