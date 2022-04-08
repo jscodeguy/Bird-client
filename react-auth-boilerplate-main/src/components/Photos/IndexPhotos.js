@@ -20,8 +20,6 @@ const IndexPictures = (props) => {
         return <p>no pictures yet, go add some</p>
     }
 
-    
-
     if (pictures.length > 0) {
         pictures.Jsx = pictures.map(picture => (
             <li key={picture.id}>
