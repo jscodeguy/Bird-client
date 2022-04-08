@@ -40,6 +40,12 @@ const authenticatedOptions = (
 				create a picture
 			</Link>
 		</Nav.Item>
+
+		<Nav.Item>
+			<Link to='pictures' style={linkStyle}>
+				Photo
+			</Link>
+		</Nav.Item>
 	</>
 )
 

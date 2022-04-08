@@ -1,12 +1,19 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { getAllPictures } from '../../api/photos.js'
 import { Link } from "react-router-dom"
 import { Container } from "react-bootstrap"
+import { Link } from 'react-router-dom'
+import { motion} from 'framer-motion';
+import { Image, Button, Container } from 'react-bootstrap'
 
 const IndexPictures = (props) => {
     const [pictures, setPictures] = useState(null)
+    const [width, setWidth] = useState(0)
+    const carousel = useRef();
+
 
     useEffect(() => {
+      // setWidth(carousel.current.scrollWidth, carousel.offsetWidth)
         getAllPictures()
             .then(res => {
                 console.log("response data pictures", res.data.pictures)
@@ -23,28 +30,29 @@ const IndexPictures = (props) => {
 
     if (pictures.length > 0) {
         pictures.Jsx = pictures.map(picture => (
-            <div className="pic-wrap">
-                <img key={picture.id}
-                    className="pic-img bordertown"
-                    src={picture.source}
-                    alt="bird picture"
-                />
-            </div>
-        )
-    )}
+            <p className="p" key={picture.id}>
+                <Link to={`./${picture._id}`}><img src= {picture.source} height="300"  /></Link>
+            </p>
+        )) 
+    }
 
     return (
         
         <>
-        <Container>
-            <p className="section-title">All the pictures</p>
-            <div className="pic-section-wrap">
-                    {pictures.Jsx}
-            </div>
-
-        </Container>
+         <Container className="indexphoto">
+        <h2 className="myPhoto">My Photo Gallery</h2>
+        <motion.div ref={carousel} className="carousel"> 
+            <motion.div drag="x" dragConstraints={{ right: 0}} className="inner-carousel">
+              <motion.div className="item">
+              {pictures.Jsx}
+              </motion.div>
+              </motion.div>
+        </motion.div>
+        </Container>      
         </>
     )
-}
-
-export default IndexPictures
+  }
+  
+  export default IndexPictures
+  {/* <motion.h3 animate={{ x: 250}}>All the pictures</motion.h3> */}
+  // d-flex flex-wrap img-fluid shadow-4
