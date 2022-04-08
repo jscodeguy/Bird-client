@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { motion} from 'framer-motion';
 import { Image, Button, Container } from 'react-bootstrap'
 
+
 const IndexPictures = (props) => {
     const [pictures, setPictures] = useState(null)
     const [width, setWidth] = useState(0)
@@ -29,16 +30,12 @@ const IndexPictures = (props) => {
     if (pictures.length > 0) {
         pictures.Jsx = pictures.map(picture => (
 
-            <div className="pic-wrap">
-                <Link to={`./${picture._id}`}>
-                    <img key={picture.id}
-                        className="pic-img bordertown"
-                        src={picture.source}
-                        alt="bird picture"/>
-                </Link>
-            </div>
-        )
-    )}
+            <p className="p" key={picture.id}>
+            <Link to={`./${picture._id}`}><img src= {picture.source} height="300"  /></Link>
+        </p>
+    ))
+        
+    }
 
 
     return (
@@ -53,7 +50,7 @@ const IndexPictures = (props) => {
               </motion.div>
               </motion.div>
         </motion.div>
-        </Container>      
+        </Container>     
         </>
     )
   }

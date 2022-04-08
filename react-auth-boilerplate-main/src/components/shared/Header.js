@@ -42,11 +42,11 @@ const authenticatedOptions = (
 			</Link>
 		</Nav.Item>
 
-		<Nav.Item>
+		{/* <Nav.Item>
 			<Link to='pictures' style={linkStyle}>
-				Photo
+				Pictures
 			</Link>
-		</Nav.Item>
+		</Nav.Item> */}
 	</>
 )
 
