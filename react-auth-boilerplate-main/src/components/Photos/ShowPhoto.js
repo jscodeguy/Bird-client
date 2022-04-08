@@ -49,10 +49,12 @@ const ShowPictures = (props) => {
     }
     
     // Pulling the comments array into a Jsx object so we can render them
+
     picture.Jsx = picture.comments.map(picture => (
         <p key={picture._id}><strong>
         - {picture.note}</strong></p>
     ))
+
 
     return (
 
