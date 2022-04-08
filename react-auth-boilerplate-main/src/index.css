@@ -14,18 +14,6 @@ code {
     monospace;
 }
 
-<<<<<<< HEAD
-
-
-.home { 
-  background-image:url("https://i.ibb.co/yWgJqZV/European-Roller-Rajasthan-India-By-Nishant-Rana-720x480.jpg") ;
-  position: relative;
-  display: 100%;
-  background-size: cover;
-  background-repeat: no-repeat;
-
-
-=======
 .visually-hidden {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
@@ -41,40 +29,72 @@ code {
   padding: 10px;
   font-size: 30px;
   font-weight: bold;
->>>>>>> cd393cdc9c97aa91d648598d4fe730f1145a6af6
 }
 
 
 
-<<<<<<< HEAD
-
-
-.card {
-  background-color: green;
-  max-width: 800px;
-  border-radius: 10px;
-  padding: 20px;
-  margin: 10px;
-}
-
-.container {
-display: flex;
-justify-content: center;
-max-width: 800px;
-margin: 0 auto;
-
-}
-
-
-/* <a href="https://ibb.co/yWgJqZV"><img src="https://i.ibb.co/yWgJqZV/European-Roller-Rajasthan-India-By-Nishant-Rana-720x480.jpg" alt="European-Roller-Rajasthan-India-By-Nishant-Rana-720x480" border="0"></a> */
-=======
 .bordertown {
   border: 20px solid black;
 }
 
+.indexphoto {
+width: 800px;
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+padding: 40px;
+
+margin: auto;
+}
 .sighting, .m-5 {
   text-align: center;
   padding: 10px;
   font-weight: bold;
 }
->>>>>>> cd393cdc9c97aa91d648598d4fe730f1145a6af6
+.item {
+display: flex;
+flex-direction: row;
+min-height: 40rem;
+padding: 40px;
+border-radius: 2rem;
+
+}
+.inner-carousel {
+display: flex;
+flex-direction: row;
+background-color: rgb(255, 255, 255);
+max-width: 600px;
+
+}
+.carousel {
+cursor: grab;
+overflow: hidden;
+background-color: rgb(255, 255, 255);
+height: 500px;
+
+}
+.p {
+  border-radius: 10px;
+  padding: 20px;
+
+}
+
+.indexphoto {
+flex-direction: column;
+justify-content: center;
+
+}
+
+.myPhoto {
+display: flex;
+flex-direction: column;
+justify-content: center;
+
+
+}
+
+
+
+
+
+

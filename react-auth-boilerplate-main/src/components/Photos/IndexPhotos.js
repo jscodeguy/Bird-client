@@ -1,14 +1,17 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { getAllPictures } from '../../api/photos.js'
 import { Link } from 'react-router-dom'
-import { MDBGallery, MDBGalleryList} from 'mdbreact'
-import 'mdbreact/dist/css/mdb.css';
-
+import { motion} from 'framer-motion';
+import { Image, Button, Container } from 'react-bootstrap'
 
 const IndexPictures = (props) => {
     const [pictures, setPictures] = useState(null)
+    const [width, setWidth] = useState(0)
+    const carousel = useRef();
+
 
     useEffect(() => {
+      // setWidth(carousel.current.scrollWidth, carousel.offsetWidth)
         getAllPictures()
             .then(res => {
                 console.log("response data pictures", res.data.pictures)
@@ -27,51 +30,28 @@ const IndexPictures = (props) => {
 
     if (pictures.length > 0) {
         pictures.Jsx = pictures.map(picture => (
-            <li key={picture.id}>
-                <Link to={`./${picture._id}`}><img src= {picture.source} height="100" /></Link>
-            </li>
-        ))
+            <p className="p" key={picture.id}>
+                <Link to={`./${picture._id}`}><img src= {picture.source} height="300"  /></Link>
+            </p>
+        )) 
     }
-
-
-
-
-
 
     return (
-        <MDBGallery cols={4}>
-          {pictures.Jsx.map(({ cols, img, title }, i) => {
-            return (
-              <MDBGalleryList key={i} cols={cols || 1}>
-                <img src={img} alt={title} />
-              </MDBGalleryList>
-            );
-          })}
-        </MDBGallery>
-      );
-    }
-
-
-    
-    
-    
-    export default IndexPictures
-    
-    
-    
-    // return (
-        
-    //     <>
-    //         <h3>All the pictures</h3>
-    //             {/* {pictures.Js} */}
-    //         <MDBGallery cols={4}>
-    //         {pictures.Jsx.map(({ cols, img, title }, i) => {
-    //             return (
-    //                 <MDBGalleryList key={i} cols={cols || 1}>
-    //                 <img src={img} alt={title} />
-    //             </MDBGalleryList>
-    //             );
-    //         })}
-    //         </MDBGallery>
-    //         </>
-    //         )
+        <>
+         <Container className="indexphoto">
+        <h2 className="myPhoto">My Photo Gallery</h2>
+        <motion.div ref={carousel} className="carousel"> 
+            <motion.div drag="x" dragConstraints={{ right: 0}} className="inner-carousel">
+              <motion.div className="item">
+              {pictures.Jsx}
+              </motion.div>
+              </motion.div>
+        </motion.div>
+        </Container>      
+        </>
+    )
+  }
+  
+  export default IndexPictures
+  {/* <motion.h3 animate={{ x: 250}}>All the pictures</motion.h3> */}
+  // d-flex flex-wrap img-fluid shadow-4

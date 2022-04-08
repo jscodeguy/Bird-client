@@ -46,16 +46,10 @@ const IndexSightings = () => {
         <>
         <div className="container"> 
             <h3>All the Sightings</h3>
-<<<<<<< HEAD
-            <div style={cardContainerLayout}>
-                {sightings.Jsx}
-            </div>
-=======
             <ul>
                 <li className="card">{sightings.Jsx}</li>
             </ul>
         </div>
->>>>>>> StephanieBranch
         </>
     )
 }
