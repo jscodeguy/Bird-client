@@ -11,6 +11,7 @@ const cardContainerLayout = {
     flexFlow: 'row wrap'
 }
 
+
 const IndexSightings = () => {
     //  Destructuring the useState React hook
     const [sightings, setSightings] = useState(null)
@@ -43,10 +44,12 @@ const IndexSightings = () => {
 
     return (
         <>
+        <div className="container"> 
             <h3>All the Sightings</h3>
-            <div style={cardContainerLayout}>
-                {sightings.Jsx}
-            </div>
+            <ul>
+                <li className="card">{sightings.Jsx}</li>
+            </ul>
+        </div>
         </>
     )
 }
