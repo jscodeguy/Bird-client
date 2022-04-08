@@ -68,7 +68,7 @@ const ShowSighting = (props) => {
                 <h2>Sighting Details</h2>
                 <p className='sighting'>Where seen:<br/>{sighting.where_seen}</p>
                 <p className='sighting'>When seen:<br/>                
-                <Moment format="DD MMM,YYYY">{sighting.when_seen}</Moment></p>
+                <Moment format="DD MMM, YYYY">{sighting.when_seen}</Moment></p>
                 <p className='sighting'>Weather:<br/>{sighting.weather}</p>
                 <p className='sighting'>Description:<br/>{sighting.description}</p>
 

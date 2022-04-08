@@ -2,6 +2,8 @@ import React, { Fragment } from 'react'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import { Link } from 'react-router-dom'
+
+
 const linkStyle = {
     color: 'white',
     textDecoration: 'none'
@@ -80,9 +82,11 @@ const alwaysOptions = (
 const Header = ({ user }) => (
 	<Navbar bg='primary' variant='dark' expand='md'>
 		<Navbar.Brand>
+			{/* <Image src="./public/rf-feather.png"> */}
             <Link to='/' style={linkStyle}>
-                BirdBrains
+                Ruffled Feathers
             </Link>
+			{/* </Image> */}
         </Navbar.Brand>
 		<Navbar.Toggle aria-controls='basic-navbar-nav' />
 		<Navbar.Collapse id='basic-navbar-nav'>

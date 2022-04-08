@@ -54,7 +54,7 @@ const CreateFave = (props) => {
             .then(res => {navigate(`/favorites/${res.data.favorite._id}`)})
             // then we send a success message
             .then(() =>
-            console.log('pet creation successful')
+            console.log('favorite creation successful')
                 )
             // if there is an error, we'll send an error message
             .catch(() =>

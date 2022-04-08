@@ -70,7 +70,7 @@ const CreatePicture = (props) => {
             <Form onSubmit={handleSubmit}>
                 <Form.Label>Description</Form.Label>
                 <Form.Control 
-                    placeholder="wrute a descritpion"
+                    placeholder="Tell us all about it"
                     value={picture.description}
                     name='description'
                     onChange={handleChange}

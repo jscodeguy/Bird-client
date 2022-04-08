@@ -42,7 +42,7 @@ const ShowFaves = (props) => {
             .then(() =>
                 msgAlert({
                     heading: 'Fav updated!',
-                    message: 'great! the pet loves it!',
+                    message: 'We got it!',
                     variant: 'success',
                 }))
             .then(() => triggerRefresh())
@@ -50,7 +50,7 @@ const ShowFaves = (props) => {
             .catch(() =>
                 msgAlert({
                     heading: 'Oh No!',
-                    message: 'that aint it',
+                    message: 'Something went wrong.',
                     variant: 'danger',
             }))
     }

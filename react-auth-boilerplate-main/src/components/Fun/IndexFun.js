@@ -14,7 +14,7 @@ const cardContainerLayout = {
 
 let funData
 
-const IndexFun = () => {
+const IndexFun = (props) => {
     const [fun, setFun] = useState(null)
     useEffect(() => {
         getFun()
