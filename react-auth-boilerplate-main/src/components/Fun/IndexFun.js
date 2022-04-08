@@ -35,13 +35,16 @@ const IndexFun = () => {
 
     if (funData.length > 0) {
         funData.Jsx = funData.map(funData => (
-            <Card key={funData.id} style={{ width: "30% "}} className="m-2">
+            <Card key={funData.id} style={{ width: "50% "}} className="m-2">
                 <Card.Header className="card-info-header">
                     {funData.firstname} {funData.lastname}
                 </Card.Header>
                 <Card.Body>
-                    <p className="card-data">{funData.affiliation}</p>
-                    {funData.birth.date}
+                    <p>Affiliation: <span className="card-info">{funData.affiliation}</span></p>
+                    <p>Birth Date: <span className="card-info">{funData.birth.date}</span></p>
+                    <p>Height: <span className="card-info">{funData.height.feets}'{funData.height.inches}"</span></p>
+                    <p>Weight: <span className="card-info">{funData.weight.pounds}lbs</span></p>
+                    <p>Joined the NBA in <span className="card-info">{funData.nba.start}</span></p>
                 </Card.Body>
             </Card>
         ))
@@ -49,13 +52,13 @@ const IndexFun = () => {
 
     return (
         <>
-            <Container>
-            <p className="pic-title">Fun Facts!</p>
+            <Container className="fun-fact-wrap">
+            <p className="fun-title">Fun Facts!</p>
             <div style={cardContainerLayout}>
                 {funData.Jsx}
             </div>
 
-            <Button onClick={() => getFun()} className="m-2" variant="info">
+            <Button onClick={() => getFun()} className="m-2" variant="success">
                 Click for more fun!
             </Button>
             
