@@ -4,6 +4,7 @@ import { getAllSights } from "../../api/sightings"
 import { Link } from "react-router-dom"
 
 
+
 const IndexSightings = () => {
     //  Destructuring the useState React hook
     const [sightings, setSightings] = useState(null)
@@ -33,10 +34,12 @@ const IndexSightings = () => {
 
     return (
         <>
+        <div className="container"> 
             <h3>All the Sightings</h3>
             <ul>
-                <li>{sightings.Jsx}</li>
+                <li className="card">{sightings.Jsx}</li>
             </ul>
+        </div>
         </>
     )
 }

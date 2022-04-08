@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { getAllPictures } from '../../api/photos.js'
 import { Link } from 'react-router-dom'
+import { MDBGallery, MDBGalleryList} from 'mdbreact'
+import 'mdbreact/dist/css/mdb.css';
+
 
 const IndexPictures = (props) => {
     const [pictures, setPictures] = useState(null)
@@ -30,12 +33,45 @@ const IndexPictures = (props) => {
         ))
     }
 
-    return (
-        <>
-            <h3>All the pictures</h3>
-                {pictures.Jsx}
-        </>
-    )
-}
 
-export default IndexPictures
+
+
+
+
+    return (
+        <MDBGallery cols={4}>
+          {pictures.Jsx.map(({ cols, img, title }, i) => {
+            return (
+              <MDBGalleryList key={i} cols={cols || 1}>
+                <img src={img} alt={title} />
+              </MDBGalleryList>
+            );
+          })}
+        </MDBGallery>
+      );
+    }
+
+
+    
+    
+    
+    export default IndexPictures
+    
+    
+    
+    // return (
+        
+    //     <>
+    //         <h3>All the pictures</h3>
+    //             {/* {pictures.Js} */}
+    //         <MDBGallery cols={4}>
+    //         {pictures.Jsx.map(({ cols, img, title }, i) => {
+    //             return (
+    //                 <MDBGalleryList key={i} cols={cols || 1}>
+    //                 <img src={img} alt={title} />
+    //             </MDBGalleryList>
+    //             );
+    //         })}
+    //         </MDBGallery>
+    //         </>
+    //         )

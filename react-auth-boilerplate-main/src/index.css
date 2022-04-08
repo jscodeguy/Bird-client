@@ -28,4 +28,22 @@ code {
 
 
 
+
+.card {
+  background-color: green;
+  max-width: 800px;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+}
+
+.container {
+display: flex;
+justify-content: center;
+max-width: 800px;
+margin: 0 auto;
+
+}
+
+
 /* <a href="https://ibb.co/yWgJqZV"><img src="https://i.ibb.co/yWgJqZV/European-Roller-Rajasthan-India-By-Nishant-Rana-720x480.jpg" alt="European-Roller-Rajasthan-India-By-Nishant-Rana-720x480" border="0"></a> */
