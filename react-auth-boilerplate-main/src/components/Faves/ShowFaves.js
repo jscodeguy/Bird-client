@@ -70,30 +70,24 @@ const ShowFaves = (props) => {
     if (favorite) {
         favorite.Jsx =(
             <>
-                <Card>
-                    <Card.Body>
-                        <Card.Text>
-                            <small>Id: {favorite._id}</small>
-                            <small>Have Seen: {favorite.haveSeen}</small>
-                            <small>Bird: {favorite.bird}</small>
-                        </Card.Text>
-                    </Card.Body>
-                </Card>
+                <p>Have Seen: {favorite.haveSeen}<br /></p>
+                <p>Bird: {favorite.bird}</p>    
             </>
         )
     }
 //return the data, assign the buttons their respsective functions and give the edit fave component the props
     return (
         <>
-            <h5> Show Favorites</h5>
-            <div style={cardContainerLayout}>
-                {favorite.Jsx}
+            <Container className="m-5">
+                <h5> Show Favorites</h5>
+                    {favorite.Jsx}
                 <Button onClick={() => destroyFav()}variant="danger">
                     Delete
                 </Button>
                 <Button onClick={() => setModalOpen(true)} className="m-2" variant="warning">
                     Edit
                 </Button>
+            </Container>
                 <EditFave 
                 favorite={favorite}
                 show={modalOpen}
@@ -103,8 +97,6 @@ const ShowFaves = (props) => {
                 updateFave={updateFave}
                 handleClose={() => setModalOpen(false)}
             />
-            </div>
-            
         </>
     )
 }
