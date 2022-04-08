@@ -44,3 +44,9 @@ code {
 .bordertown {
   border: 20px solid black;
 }
+
+.sighting, .m-5 {
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+}

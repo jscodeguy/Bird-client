@@ -6,7 +6,7 @@ const Home = (props) => {
 
 
 	const SearchBar = () => (
-		<form action="/" method="get">
+		<form action="/" method="get" className="search">
 			<label htmlFor="header-search">
 				<span className="visually-hidden">Search</span>
 			</label>
