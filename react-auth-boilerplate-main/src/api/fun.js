@@ -1,11 +1,12 @@
 import axios from "axios"
 
-let idNBA = "740"
+let idNBA = 740
 
+// Exported function that calls a third party API for info on NBA player Jabari Bird
 export const getFun = (updatedFun) => {
     return axios ({
         url: 'https://api-nba-v1.p.rapidapi.com/players',
-        params: {id: "740"},
+        params: {id: `${idNBA}`},
         method: "GET",
         headers: {
             'X-RapidAPI-Host': 'api-nba-v1.p.rapidapi.com',
@@ -13,4 +14,11 @@ export const getFun = (updatedFun) => {
         },
         data: { player: updatedFun }
     })
+}
+
+// Exported function that makes a call to the NBA API, using a random number generator for the player's info to fetch.
+export const getRandomFun = () => {
+    idNBA = Math.floor(Math.random() * 3400) + 1
+    console.log("nba id:", idNBA)
+    getFun()
 }

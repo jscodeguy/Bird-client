@@ -1,6 +1,6 @@
 // Import dependencies
 import React, { useState, useEffect } from "react"
-import { getFun } from "../../api/fun"
+import { getFun, getRandomFun } from "../../api/fun"
 import { Link } from "react-router-dom"
 import { Card, Container, Button } from 'react-bootstrap'
 import axios from "axios"
@@ -16,7 +16,6 @@ let funData
 
 const IndexFun = () => {
     const [fun, setFun] = useState(null)
-
     useEffect(() => {
         getFun()
             .then(res => {
@@ -58,7 +57,7 @@ const IndexFun = () => {
                 {funData.Jsx}
             </div>
 
-            <Button onClick={() => getFun()} className="m-2" variant="success">
+            <Button onClick={() => getRandomFun()} className="m-2" variant="success">
                 Click for more fun!
             </Button>
             
