@@ -11,7 +11,6 @@ const SightingForm = (props) => {
         <Container className="justify-content-center">
             <h3>{heading}</h3>
             <Form onSubmit={handleSubmit}>
-            <p>hi can you see this?</p>
             {/* <p>props: {props.sighting.id}</p> */}
             
                 <Form.Label>Where Seen</Form.Label>

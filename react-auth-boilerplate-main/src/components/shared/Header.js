@@ -69,6 +69,11 @@ const alwaysOptions = (
 				Pictures
 			</Link>
 		</Nav.Link>
+		<Nav.Link>
+			<Link to='/fun' style={linkStyle}>
+				Fun Facts!
+			</Link>
+		</Nav.Link>
 	</>
 )
 

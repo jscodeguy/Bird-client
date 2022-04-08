@@ -32,7 +32,7 @@ const IndexSightings = () => {
 
     if (sightings.length > 0) {
         sightings.Jsx = sightings.map(sightings => (
-            <Card key={sightings._id} style={{width: '30%' }} className='m2'>
+            <Card key={sightings._id} style={{width: '30%' }} className='m-2'>
                 <Card.Header>{sightings.bird}</Card.Header>
                 <Card.Body>
                     <Link to={`./${sightings._id}`}>{sightings.where_seen}</Link>   
