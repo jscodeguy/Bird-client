@@ -13,7 +13,7 @@ const cardContainerLayout = {
 }
 
 
-const IndexSightings = () => {
+const IndexSightings = (props) => {
     //  Destructuring the useState React hook
     const [sightings, setSightings] = useState(null)
 

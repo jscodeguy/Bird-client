@@ -1,7 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { getAllPictures } from '../../api/photos.js'
-import { Link } from "react-router-dom"
-import { Container } from "react-bootstrap"
 import { Link } from 'react-router-dom'
 import { motion} from 'framer-motion';
 import { Image, Button, Container } from 'react-bootstrap'
