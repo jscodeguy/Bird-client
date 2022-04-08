@@ -22,6 +22,7 @@ import ShowFaves from './components/Faves/ShowFaves'
 import IndexSightings from './components/Sightings/IndexSightings'
 import ShowSighting from "./components/Sightings/ShowSighting"
 import CreateSighting from "./components/Sightings/CreateSighting"
+import IndexFun from "./components/Fun/IndexFun"
 
 const App = () => {
 
@@ -147,6 +148,11 @@ const App = () => {
 				<Route
 					path="/sightings/:id"
 					element={<ShowSighting msgAlert={msgAlert} user={user} />}
+				/>
+				{/* Fun Facts: INDEX route */}
+				<Route
+					path="/fun"
+					element={<IndexFun msgAlert={msgAlert} user={user} />}
 				/>
 			</Routes>
 

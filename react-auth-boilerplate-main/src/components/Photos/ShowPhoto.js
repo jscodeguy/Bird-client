@@ -58,9 +58,9 @@ const ShowPictures = (props) => {
 
         <>
             <Container className="m-5">
-                    <p className="pic-title">"{picture.description}" by {picture.owner}</p>
-                    <Image src={picture.source} className="img-fluid shadow-4"/>
-                    <p>Featuring: {picture.bird}</p>
+                <p className="pic-title">"{picture.description}" by {picture.owner}</p>
+                <Image src={picture.source} className="img-fluid shadow-4"/>
+                <p>Featuring: {picture.bird}</p>
 
                 <Button onClick={() => removeThePicture(props)} className="m-2" variant="danger">
                     Delete picture

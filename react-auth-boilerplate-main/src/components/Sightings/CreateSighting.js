@@ -10,7 +10,7 @@ import { createSightingSuccess, createSightingFailure } from "../shared/AutoDism
 // We'll need the user prop here as we've required an authorized login to make a new document in the database.
 const CreateSighting = (props) => {
     const { user, msgAlert } = props
-    console.log("user prop in CreateSighting:", user)
+    // console.log("user prop in CreateSighting:", user)
     const navigate = useNavigate()
     const [sighting, setSighting] = useState({
         where_seen: "",
@@ -19,7 +19,7 @@ const CreateSighting = (props) => {
         description: "",
         bird: ""
     })
-    console.log("info in Create:", sighting)
+    // console.log("info in Create:", sighting)
 
     const handleChange = (e) => {
         // e === event
@@ -31,14 +31,14 @@ const CreateSighting = (props) => {
             // Capturing the form values based on what the user enters, and ensures those value types are what we want (and the schema expects).
             const name = e.target.name
             let value = e.target.value
-            console.log("event target type:", e.target.type)
+            // console.log("event target type:", e.target.type)
             
             // ******* Will need to write a validator for date, so user can't set a date that hasn't happened yet.
 
             const updatedValue = { [name]: value }
 
-            console.log("the sighting was:", prevSighting)
-            console.log("the sighting will become:", updatedValue)
+            // console.log("the sighting was:", prevSighting)
+            // console.log("the sighting will become:", updatedValue)
 
             // Preserves the previous form and adds what's been updated.
             return {...prevSighting, ...updatedValue}
@@ -68,7 +68,7 @@ const CreateSighting = (props) => {
                     message: createSightingFailure,
                     variant: "danger",
                 }))
-            console.log("the sighting:", sighting)
+            // console.log("the sighting:", sighting)
     }
 
     return (

@@ -21,8 +21,8 @@ const CreatePicture = (props) => {
     const handleChange = (e) => {
         // e === event
         e.persist()
-//the e.target name and e.target value are a key value based pair
-//this pair can change and be edited
+        //the e.target name and e.target value are a key value based pair
+        //this pair can change and be edited
         setPicture(prevPicture => {
             const name = e.target.name
             let value = e.target.value
@@ -70,19 +70,12 @@ const CreatePicture = (props) => {
             <Form onSubmit={handleSubmit}>
                 <Form.Label>Description</Form.Label>
                 <Form.Control 
-                    placeholder="wrute a descritpion"
+                    placeholder="Tell us all about it"
                     value={picture.description}
                     name='description'
                     onChange={handleChange}
                 />
-                {/* <Form.Label>Notes</Form.Label>
-                <Form.Control 
-                    placeholder="what type of animal is your pet?"
-                    value={picture.notes}
-                    name='notes'
-                    onChange={handleChange}
-                /> */}
-               
+
                 <Button type='submit'>Submit</Button>
             </Form>
         </Container>

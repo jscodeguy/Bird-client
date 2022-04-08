@@ -11,7 +11,6 @@ const SightingForm = (props) => {
         <Container className="justify-content-center">
             <h3>{heading}</h3>
             <Form onSubmit={handleSubmit}>
-            <p>hi can you see this?</p>
             {/* <p>props: {props.sighting.id}</p> */}
             
                 <Form.Label>Where Seen</Form.Label>
@@ -28,17 +27,18 @@ const SightingForm = (props) => {
                     name="when_seen"
                     onChange={handleChange}
                 />
+                <Form.Label>What was the weather like?</Form.Label>
                 <Form.Select
                     aria-label="Weather"
                     name="weather"
                     defaultValue={sighting.weather}
                     onChange={handleChange}>
-                        <option>What was the weather?</option>
+                        <option>Select One</option>
                         <option value="sun">Sun</option>
                         <option value="overcast">Overcast</option>
                         <option value="rain">Rain</option>
                         <option value="snow">Snow</option>
-                    </Form.Select>                
+                    </Form.Select>       
                 <Form.Label>Description</Form.Label>
                 <Form.Control 
                     placeholder="Describe your bird experience"
@@ -47,14 +47,7 @@ const SightingForm = (props) => {
                     name="description"
                     onChange={handleChange}
                 />
-                <Form.Label>Bird ID (to come from API)</Form.Label>
-                <Form.Control 
-                    placeholder="1234_bird_id_from_api"
-                    value={sighting.bird}
-                    type="string"
-                    name="bird"
-                    onChange={handleChange}
-                />
+                <br />
                 <Button type="submit">Submit</Button>
             </Form>
         </Container>
