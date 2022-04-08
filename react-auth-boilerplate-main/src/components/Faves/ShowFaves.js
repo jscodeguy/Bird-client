@@ -70,7 +70,7 @@ const ShowFaves = (props) => {
     if (favorite) {
         favorite.Jsx =(
             <>
-                <p>Have Seen: {favorite.haveSeen}<br /></p>
+                <p>Have Seen: {favorite.haveSeen ? 'yes' : 'no'}<br /></p>
                 <p>Bird: {favorite.bird}</p>    
             </>
         )
