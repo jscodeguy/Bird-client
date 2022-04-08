@@ -2,7 +2,14 @@
 import React, { useState, useEffect } from "react"
 import { getAllSights } from "../../api/sightings"
 import { Link } from "react-router-dom"
+import { Card } from 'react-bootstrap'
 
+//sets the layout for the bootstrap card 
+const cardContainerLayout = {
+    display: 'flex',
+    justifyContent: 'center',
+    flexFlow: 'row wrap'
+}
 
 const IndexSightings = () => {
     //  Destructuring the useState React hook
@@ -25,18 +32,21 @@ const IndexSightings = () => {
 
     if (sightings.length > 0) {
         sightings.Jsx = sightings.map(sightings => (
-            <li key={sightings._id}>
-                <Link to={`./${sightings._id}`}>{sightings.where_seen}</Link>
-            </li>
+            <Card key={sightings._id} style={{width: '30%' }} className='m2'>
+                <Card.Header>{sightings.bird}</Card.Header>
+                <Card.Body>
+                    <Link to={`./${sightings._id}`}>{sightings.where_seen}</Link>   
+                </Card.Body>
+            </Card>
         ))
     }
 
     return (
         <>
             <h3>All the Sightings</h3>
-            <ul>
-                <li>{sightings.Jsx}</li>
-            </ul>
+            <div style={cardContainerLayout}>
+                {sightings.Jsx}
+            </div>
         </>
     )
 }
